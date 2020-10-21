@@ -1,9 +1,43 @@
-.nav {
-    background: pink;
-    
-    &__link {
-        font-size: 5rem;
-    }
-    
+@import "./Layout.scss";
+
+.nav { 
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    align-items: center;
+    font-family: $sans-serif;
+
 }
+
+.menu {
+    list-style: none;
+    display: flex;
+
+    &__link {
+        color: $dark-color;
+        font-weight: $medium;
+        text-decoration: none;
+        margin-left: 3.5rem;
+
+        &:hover {
+            border-bottom:2px solid $primary-color;
+        }
+    }
+
+}
+
+.logo {
+
+    display:flex;
+    flex-direction: column;
+
+    &__link {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: $dark-color;
+    }
+}
+
+
 

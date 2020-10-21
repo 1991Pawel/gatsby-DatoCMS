@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@400;500;600&display=swap');
+
+// font-family: 'Libre Baskerville', serif;
+// font-family: 'Montserrat', sans-serif;
+
+//Variables
+//colors
+$dark-color: #000;
+$primary-color:#D5B36F;
+
+//fonts
+$sans-serif: 'Montserrat', sans-serif;
+$serif: 'Libre Baskerville', serif;
+$bold: 600;
+$medium:500;
+$regular:400;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    font-size: 62.5%; 
+
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: $serif;
+  }
+
+.container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    
+}
+
+
