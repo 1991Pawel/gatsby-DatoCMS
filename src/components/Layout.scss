@@ -31,6 +31,11 @@ $regular:400;
     font-family: $serif;
   }
 
+  img {
+    max-width: 100%;
+  }
+
+
 .container {
       max-width: 1600px;
       margin: 0 auto;
