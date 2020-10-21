@@ -7,7 +7,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <h2>Hello World</h2>
-  </Layout>
+    </Layout>
   )
 };
 
