@@ -9,4 +9,4 @@ const Layout = ({ childen }) => {
   )
 }
 
-export default;
+export default Layout;
