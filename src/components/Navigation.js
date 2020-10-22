@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React, { useState } from 'react'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import './Navigation.scss'
@@ -14,10 +13,11 @@ const Navigation = () => {
         <nav className="nav">
             <div className="wrapper">
                 <div className="logo">
-                    <a className="logo__link" href="/">Michał Wroceński</a>
+                    <AnchorLink className="logo__link" to="/#intro" title="Michał Wroceński" />
                     <span className="logo__desc">
                         Fotografia
-                </span>
+                    </span>
+
                 </div>
                 <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
                 <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>

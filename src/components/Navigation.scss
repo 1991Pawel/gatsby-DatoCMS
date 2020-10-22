@@ -80,8 +80,6 @@
 
 .logo {
     font-family: $sans-serif;
-    display:flex;
-    flex-direction: column;
 
 
     &__desc {
@@ -96,6 +94,8 @@
         font-weight: 600;
         text-decoration: none;
         color: $dark-color;
+        display:flex;
+        flex-direction: column;
         
     }
 

@@ -21,7 +21,7 @@
   }
 
 .strong {
-  font-weight: $medium;
+  font-weight: $bold;
 }
 
 .wrapper {
@@ -33,6 +33,10 @@
 
 h2 {
   padding-top: 3rem;
+}
+
+p {
+  line-height: 2.2rem;
 }
 
 
