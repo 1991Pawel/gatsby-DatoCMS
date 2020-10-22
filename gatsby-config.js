@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,6 +14,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -26,28 +28,18 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-      
-      
+
     },
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        // You can find your read-only API token under the Settings > API tokens
-        // section of your administrative area:
         apiToken: `f2a8bb8709ee4ec85d8d489ec63210`,
-        // The project environment to read from. Defaults to the primary environment:
-        environment: `master`,
-        // If you are working on development/staging environment, you might want to
-        // preview the latest version of records instead of the published one:
-        previewMode: false,  
+        // Preview the latest version of records instead of the published one
+        previewMode: false,
         // Disable automatic reloading of content when some change occurs on DatoCMS:
         disableLiveReload: false,
-  
-        },
+        apiUrl: 'https://site-api.datocms.com'
       },
-    
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
   ],
 }
