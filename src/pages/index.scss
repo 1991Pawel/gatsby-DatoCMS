@@ -21,6 +21,10 @@
 .intro {
     &__content {
         margin-top: 5rem;
+
+        @media only screen and (min-width: $breakpoint-tablet) {
+            padding-right: 4rem; 
+         }
      
     }
 
@@ -53,7 +57,10 @@
         position: relative;
         width:  230px;  
         z-index: 9;
-    
+        @media only screen and (min-width: 600px) {
+            width:  40%; 
+        }
+            
         &:before {
             content: '';
             position: absolute;
@@ -63,7 +70,6 @@
             width: 20%;
             height: 98%;
             z-index: -1;
-            
         }
 
         &:after {
@@ -89,9 +95,7 @@
     padding: 5vh 0;
 
     &__title {
-        position: relative;
-        text-transform: uppercase;
-        font-weight: $regular;
+        @include title-section;
         
     }
     &__title:before {
@@ -133,6 +137,92 @@
             padding: 1rem 3rem;
         }
 
+        &:after {
+            @include gold-decoration;
+        }
+
     }
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      padding: 10vh 0;
+    } 
+
+}
+
+.about .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+        flex-direction: row; 
+     }
+}
+
+.about {
+    padding: 5vh 0;
+    background: #2c2c2c;
+
+    &__content {
+      
+        @media only screen and (min-width: $breakpoint-tablet) {
+            width:70%;
+            padding-right: 4rem; 
+         }
+         
+    }
+
+    &__title,&__desc {
+        color: $light-color;
+    }
+
+    &__desc {
+     
+        margin-bottom: 2rem;
+        font-family: $sans-serif;
+        color: $gray-color;
+        border-left: 2px solid $primary-color ;
+        padding-left: 1rem;
+    }
+
+    &__desc:last-child {
+        margin-bottom: 6rem;
+    }
+    
+    &__title {
+        @include title-section;
+        margin-bottom: 3rem;
+    }
+     
+    &__title:before {
+        @include shadow-title;
+        content: 'O mnie';
+        writing-mode: horizontal-tb;
+        transform: translate(0 , -100%);
+        color: rgba(216, 216, 216, 0.205);  
+    }
+
+    &__image {
+        position: relative;
+        width:  230px;  
+        z-index: 9;
+
+        &:before {
+            @include gold-decoration;  
+        }
+        
+        @media only screen and (min-width: $breakpoint-tablet) {
+            width: 50%;
+            min-width:  350px;
+                width: 500px;
+                z-index: 9;
+         }
+    }
+
+   
+
+
+
 
 }
