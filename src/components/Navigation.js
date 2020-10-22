@@ -31,6 +31,9 @@ const Navigation = () => {
                         <AnchorLink className="menu__link" to="/#about" title="O mnie" />
                     </li>
                     <li className="menu__list">
+                        <AnchorLink className="menu__link" to="/#services" title="Usługi" />
+                    </li>
+                    <li className="menu__list">
                         <AnchorLink className="menu__link" to="/#contact" title="Kontakt" />
                     </li>
                 </ul>

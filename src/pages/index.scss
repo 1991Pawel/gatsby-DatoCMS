@@ -178,12 +178,7 @@
     }
 
     &__desc {
-     
-        margin-bottom: 2rem;
-        font-family: $sans-serif;
-        color: $gray-color;
-        border-left: 2px solid $primary-color ;
-        padding-left: 1rem;
+     @include description
     }
 
     &__desc:last-child {
@@ -219,10 +214,59 @@
                 z-index: 9;
          }
     }
+}
 
-   
+.services .wrapper {
+    // display: flex;
+    // flex-direction: column;
+
+
+    // @media only screen and (min-width: $breakpoint-tablet) {
+    //     flex-direction: row;
+    //     flex-wrap: wrap;
+    //   } 
+}
+
+.services {
+    padding: 5vh 0; 
+    background: #eeeeee;
+
+    &__boxs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__box {
+        @media only screen and (min-width: $breakpoint-tablet) {
+            width: 48%;
+          } 
+    }
 
 
 
+   &__title {
+    position: relative;
+    @include title-section;
+   } 
+   &__title:before {
+    @include shadow-title;
+    content: 'Usługi';
+    writing-mode: horizontal-tb;
+    transform: translate(0 , -100%);
+    }
+    &__desc {
+        @include description;
+       color: #333232;
+       background-color: rgb(247, 247, 247);
+       padding: 1.5rem 1rem;  
+       box-shadow: 1px 1px 2px 3px rgb(223, 223, 223);
+    }
 
+    &__heading {
+        color:$dark-color;
+        font-family: $sans-serif;
+        font-weight: $medium;
+    }
+    
 }

@@ -22,11 +22,7 @@
 
     @media only screen and (max-width: $breakpoint-tablet) {
         display: none;
-
-
      }
- 
-
     &__link {
         color: $dark-color;
         font-family: $sans-serif;
@@ -41,8 +37,6 @@
         @media only screen and (max-width: $breakpoint-tablet) {
             margin-left: 0;
             
-    
-    
          }
     } 
 
