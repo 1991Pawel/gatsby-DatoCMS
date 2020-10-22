@@ -3,6 +3,8 @@
 
 //Variables
 //colors
+$light-color:#fff;
+$gray-color:#E1E1E3;
 $dark-color: #000;
 $primary-color:#D5B36F;
 
@@ -12,3 +14,41 @@ $serif: 'Libre Baskerville', serif;
 $bold: 600;
 $medium:500;
 $regular:400;
+
+
+/// mixins
+
+@mixin shadow-text {
+        content: 'Wrocenski';
+        position: absolute;
+        top:50%;
+        left: 0;
+
+        color: rgba(0, 0, 0, 0.103);  
+        font-size: 4rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        transform: translate(-105% , -50%);
+        writing-mode: vertical-lr;
+        text-transform: uppercase; 
+    @media only screen and (min-width: $breakpoint-desktop) {
+          font-size: 9rem;
+          }
+  }   
+  @mixin shadow-title {
+    @include shadow-text;
+    @media only screen and (min-width: $breakpoint-desktop) {
+      font-size: 7rem;
+    } 
+  } 
+
+
+  
+      
+  
+
+  
+
+// mixins brakepoints
+$breakpoint-tablet: 800px;
+$breakpoint-desktop: 1024px;
