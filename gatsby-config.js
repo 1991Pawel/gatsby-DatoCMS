@@ -40,7 +40,6 @@ module.exports = {
         disableLiveReload: false,
         apiUrl: 'https://site-api.datocms.com'
       },
-    }
 
   ],
 }
