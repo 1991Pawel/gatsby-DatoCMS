@@ -11,6 +11,7 @@ const Navigation = () => {
     })
 
     return (
+
         <nav className="nav">
             <div className="wrapper">
                 <div className="logo">
@@ -20,22 +21,23 @@ const Navigation = () => {
                 </span>
                 </div>
                 <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
+                <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>
+                    <li className="menu__list">
+                        <a className="menu__link" href="/">Start</a>
+                    </li>
+                    <li className="menu__list">
+                        <a className="menu__link" href="/">Portfolio</a>
+                    </li>
+                    <li className="menu__list">
+                        <a className="menu__link" href="/">O mnie</a>
+                    </li>
+                    <li className="menu__list">
+                        <a className="menu__link" href="/">Kontakt</a>
+                    </li>
+                </ul>
             </div>
-            <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>
-                <li className="menu__list">
-                    <a className="menu__link" href="/">Start</a>
-                </li>
-                <li className="menu__list">
-                    <a className="menu__link" href="/">Portfolio</a>
-                </li>
-                <li className="menu__list">
-                    <a className="menu__link" href="/">O mnie</a>
-                </li>
-                <li className="menu__list">
-                    <a className="menu__link" href="/">Kontakt</a>
-                </li>
-            </ul>
         </nav>
+
 
     )
 }
