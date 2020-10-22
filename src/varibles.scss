@@ -30,8 +30,24 @@ $regular:400;
         font-weight: bold;
         transform: translate(-105% , -50%);
         writing-mode: vertical-lr;
-        text-transform: uppercase;    
-  }
+        text-transform: uppercase; 
+    @media only screen and (min-width: $breakpoint-desktop) {
+          font-size: 9rem;
+          }
+  }   
+  @mixin shadow-title {
+    @include shadow-text;
+    @media only screen and (min-width: $breakpoint-desktop) {
+      font-size: 7rem;
+    } 
+  } 
+
+
+  
+      
+  
+
+  
 
 // mixins brakepoints
 $breakpoint-tablet: 800px;

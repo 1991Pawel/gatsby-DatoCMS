@@ -1,12 +1,24 @@
 @import "../varibles.scss";
 
 .intro {
+    background-color: #FBFBFD;
+}
+
+.intro .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FBFBFD;
-    justify-items: center;
+
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
     
+}
+
+.intro {
     &__content {
         margin-top: 5rem;
      
@@ -28,6 +40,7 @@
      
         font-size: 3rem;
         font-weight: $regular;
+
     }
     &__desc {
         font-size: 1.8rem;
@@ -41,9 +54,6 @@
         width:  230px;  
         z-index: 9;
     
-        
-      
-
         &:before {
             content: '';
             position: absolute;
@@ -60,37 +70,69 @@
             @include shadow-text;
         }
 
-
         
     }
-    @media only screen and (min-width: $breakpoint-tablet) {
-        flex-direction: row;
-        justify-content: space-between;
-    
 
-        &__content {
-            width: 40%;
-        }
 
+    @media only screen and (min-width: $breakpoint-desktop) {
         &__image {
-              min-width:  350px;
-            width: 400px;
-            z-index: 9;
-            &:after {
-                font-size: 8rem
-            }
+            min-width:  350px;
+                width: 500px;
+                z-index: 9;
+            
         }
- }
- @media only screen and (min-width: $breakpoint-desktop) {
+    }    
 
-    &__image {
-          min-width:  350px;
-            width: 500px;
-            z-index: 9;
-         &:after {
-            font-size: 10rem;
-        }
+}
+
+.portfolio {
+    padding: 5vh 0;
+
+    &__title {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: $regular;
+        
     }
-}    
+    &__title:before {
+        @include shadow-title;
+        content: 'Portfolio';
+        writing-mode: horizontal-tb;
+        transform: translate(0 , -100%);
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media only screen and (min-width: $breakpoint-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        } 
+    }
+
+    &__link {
+        position: relative;
+        font-family: $sans-serif;
+    
+        width:  180px;
+        height: 250px;
+        margin: 2rem 0;
+
+        span {
+     
+            position: absolute;
+            text-transform: uppercase;
+            bottom: -1rem;
+            right: -1rem;
+            display: block;
+            position: absolute;
+            background: $dark-color;
+            color: #fff;
+            padding: 1rem 3rem;
+        }
+
+    }
 
 }

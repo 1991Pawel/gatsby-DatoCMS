@@ -41,6 +41,5 @@ module.exports = {
         apiUrl: 'https://site-api.datocms.com'
       },
     }
-
   ],
 }

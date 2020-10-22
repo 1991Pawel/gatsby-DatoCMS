@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Navigation.scss'
 
 
@@ -6,9 +6,7 @@ import './Navigation.scss'
 const Navigation = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-    useEffect(() => {
 
-    })
 
     return (
 
