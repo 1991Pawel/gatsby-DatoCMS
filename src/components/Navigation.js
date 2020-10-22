@@ -1,11 +1,12 @@
+import { Link } from 'gatsby';
 import React, { useState } from 'react'
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import './Navigation.scss'
 
 
 
 const Navigation = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
-
 
 
     return (
@@ -21,16 +22,16 @@ const Navigation = () => {
                 <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
                 <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>
                     <li className="menu__list">
-                        <a className="menu__link" href="/">Start</a>
+                        <AnchorLink className="menu__link" to="/#intro" title="Start" />
                     </li>
                     <li className="menu__list">
-                        <a className="menu__link" href="/">Portfolio</a>
+                        <AnchorLink className="menu__link" to="/#portfolio" title="Portfolio" />
                     </li>
                     <li className="menu__list">
-                        <a className="menu__link" href="/">O mnie</a>
+                        <AnchorLink className="menu__link" to="/#about" title="O mnie" />
                     </li>
                     <li className="menu__list">
-                        <a className="menu__link" href="/">Kontakt</a>
+                        <AnchorLink className="menu__link" to="/#contact" title="Kontakt" />
                     </li>
                 </ul>
             </div>

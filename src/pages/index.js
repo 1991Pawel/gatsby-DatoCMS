@@ -10,7 +10,7 @@ import aboutImg from '../assets/about-img.jpg'
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="intro">
+      <div id="intro" className="intro">
         <div className="wrapper">
           <div className="intro__content">
             <h1 className="intro__title">Witam cie na mojej stronie</h1>
@@ -22,7 +22,7 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <section className="portfolio">
+      <section id="portfolio" className="portfolio">
         <div className="wrapper">
           <h2 className="portfolio__title">Galeria</h2>
           <div className="portfolio__option">
@@ -47,7 +47,7 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      <section className="about">
+      <section id="about" className="about">
         <div className="wrapper">
           <div className="about__content">
             <h2 className="about__title">Michał Wroceński</h2>
