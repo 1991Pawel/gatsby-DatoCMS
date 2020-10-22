@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@400;500;600&display=swap');
-
-// font-family: 'Libre Baskerville', serif;
-// font-family: 'Montserrat', sans-serif;
-
-//Variables
-//colors
-$dark-color: #000;
-$primary-color:#D5B36F;
-
-//fonts
-$sans-serif: 'Montserrat', sans-serif;
-$serif: 'Libre Baskerville', serif;
-$bold: 600;
-$medium:500;
-$regular:400;
-
+@import '../varibles.scss';
 *, *::before, *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;

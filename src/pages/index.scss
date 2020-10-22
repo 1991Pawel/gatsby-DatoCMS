@@ -1,0 +1,144 @@
+@import "../varibles.scss";
+
+.intro {
+    display: flex;
+    padding: 0 2rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FBFBFD;
+    justify-items: center;
+
+    &__content {
+        margin-top: 5rem;
+     
+    }
+
+    &__btn {
+        font-family: $sans-serif;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 1.5rem;
+        color: $dark-color;
+        text-decoration: none;
+        margin:3rem 0 5rem;
+        border: 2px solid $primary-color;
+    }
+
+
+    &__title {
+     
+        font-size: 3rem;
+        font-weight: $regular;
+    }
+    &__desc {
+        font-size: 1.8rem;
+        font-family:$sans-serif;
+        color: rgb(31, 30, 30);
+    }
+
+  
+    &__image {
+        position: relative;
+        width:  230px;  
+        z-index: 9;
+    
+        
+      
+
+        &:before {
+            content: '';
+            position: absolute;
+            top:-.5rem;
+            left: -.5rem;
+            background: $primary-color;
+            width: 20%;
+            height: 98%;
+            z-index: -1;
+            
+        }
+
+        &:after {
+            content: 'Wrocenski';
+            position: absolute;
+            top:50%;
+            left: 0;
+
+            color: rgba(0, 0, 0, 0.103);  
+            font-size: 4rem;
+            font-family: sans-serif;
+            font-weight: bold;
+            transform: translate(-105% , -50%);
+            writing-mode: vertical-lr;
+            text-transform: uppercase;
+
+        }
+
+
+        
+    }
+ @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        &__content {
+            width: 40%;
+        }
+
+        &__image {
+              min-width:  350px;
+            width: 400px;
+            z-index: 9;
+            &:after {
+                font-size: 8rem
+            }
+        }
+ }
+ @media only screen and (min-width: 1000px) {
+
+    &__image {
+          min-width:  350px;
+        width: 500px;
+        z-index: 9;
+        &:after {
+            font-size: 10rem;
+        }
+    }
+}
+
+
+
+
+    // @media only screen and (min-width: 800px) {
+    //     grid-template-columns: 2rem 600px 600px 2rem;
+
+    //     background-color: #ccc;
+    //     // grid-template-columns: .5fr minmax(230px, 1fr) minmax(500px, 1fr) .5fr;
+    //     border:2px solid blue;
+
+    //     &__content {
+    //         // align-self: center;
+    //         grid-row: 1 / -1;
+    //         grid-column: 2 / span 1;
+    //         border: 1px solid red;
+     
+    //     }   
+
+    //     &__image {
+    //         grid-column: 3 / span 1;
+    //         // grid-row: 1 / -1;
+    //         // justify-self: flex-end;
+    //         // min-width:  350px;
+    //         // width: 500px;
+    //         // z-index: 9;
+    //         // &:after {
+    //         //     font-size: 5vw;
+    //         // }
+    //     }
+    
+    // }
+
+    
+
+}

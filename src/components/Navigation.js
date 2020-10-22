@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navigation.scss'
 
 
 
 const Navigation = () => {
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+    useEffect(() => {
+
+    })
+
     return (
         <nav className="nav">
-            <div className="logo">
-                <a className="logo__link" href="/">Michał Wroceński</a>
-                <span className="logo__desc">
-                    Fotografia
+            <div className="wrapper">
+                <div className="logo">
+                    <a className="logo__link" href="/">Michał Wroceński</a>
+                    <span className="logo__desc">
+                        Fotografia
                 </span>
+                </div>
+                <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
             </div>
-            <ul className="menu">
+            <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>
                 <li className="menu__list">
                     <a className="menu__link" href="/">Start</a>
                 </li>
@@ -27,6 +36,7 @@ const Navigation = () => {
                 </li>
             </ul>
         </nav>
+
     )
 }
 

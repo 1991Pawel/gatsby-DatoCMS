@@ -8,9 +8,7 @@ import './Layout.scss'
 const Layout = ({ children }) => {
   return (
     <div>
-      <div className="container">
-        <Navigation />
-      </div>
+      <Navigation />
       {children}
     </div>
   )
