@@ -42,8 +42,8 @@ const Navigation = () => {
                 </div>
 
                 <button className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
-                    <span class="hamburger__box">
-                        <span class="hamburger__inner"></span>
+                    <span className="hamburger__box">
+                        <span className="hamburger__inner"></span>
                     </span>
                 </button>
                 <ul ref={yourElement} className={isOpenMenu ? 'menu menu--active' : 'menu'}>
