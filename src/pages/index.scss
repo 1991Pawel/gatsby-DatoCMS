@@ -273,5 +273,76 @@
     }
     
 }
+.gallery {
+    padding: 5vh 0;
+    background: #FBFBFD;
+    text-transform: uppercase;
+
+    &__title {
+        font-weight: $medium;
+    }
+
+    &__category {
+        margin-bottom: 3rem;
+        width: 40%;
+
+        @media only screen and (min-width: $breakpoint-tablet) {
+            width: 25%;
+        } 
+        
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    &__nav {
+        margin: 3rem 0;
+    }
+
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        width: 100%;
+       
+    }
+    
+    &__link {
+        padding: 1rem;
+        background-color: $primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: $dark-color;
+        font-family: $sans-serif;
+        font-weight: $medium;
+        text-transform: uppercase;
+        margin-left: 1rem;
+        text-decoration: none;
+    }
+
+    &__item {
+        margin-bottom: 2rem;
+        border: 1px solid #ccc;
+        width: 40%;
+        max-width: 200px;
+
+        @media only screen and (min-width: $breakpoint-tablet) {
+            width: 35%;
+        } 
+        @media only screen and (min-width: $breakpoint-desktop) {
+            width: 30%;
+        } 
+    }
+}
 
 
