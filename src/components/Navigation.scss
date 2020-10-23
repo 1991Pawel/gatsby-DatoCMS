@@ -11,12 +11,12 @@
     } 
 }
 .nav--active {
-    background-color: $light-color;
     position: fixed;
+    transition: 1s all;
+    background-color: $light-color;
     z-index: 99;
     width: 100%;
     border-bottom: 1px solid $primary-color;
-    height: 6rem;
   
 }
 

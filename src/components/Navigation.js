@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import './Navigation.scss'
 
@@ -7,20 +7,31 @@ import './Navigation.scss'
 const Navigation = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
     const [scrollY, setScrollY] = useState(false);
+    const yourElement = createRef();
+
+    const handleCloseMenu = (e) => {
+        console.log('fafa')
+        if (yourElement.current && yourElement.current.contains(e.target)) {
+            setIsOpenMenu(false)
+        }
+
+    }
 
     const listener = e => {
-        const isScrolled = window.scrollY >= 200 ? true : false
+        const isScrolled = window.scrollY >= 80
         setScrollY(isScrolled)
     };
 
+
+
     useEffect(() => {
         window.addEventListener("scroll", listener);
+        window.addEventListener("click", handleCloseMenu);
         return () => {
             window.removeEventListener("scroll", listener);
+            window.removeEventListener("click", handleCloseMenu);
         };
-    }, []);
-
-
+    });
 
 
     return (
@@ -32,10 +43,9 @@ const Navigation = () => {
                     <span className="logo__desc">
                         Fotografia
                     </span>
-
                 </div>
                 <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
-                <ul className={isOpenMenu ? 'menu menu--active' : 'menu'}>
+                <ul ref={yourElement} className={isOpenMenu ? 'menu menu--active' : 'menu'}>
                     <li className="menu__list">
                         <AnchorLink className="menu__link" to="/#intro" title="Start" />
                     </li>
