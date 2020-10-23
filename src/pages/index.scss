@@ -93,6 +93,7 @@
 
 .portfolio {
     padding: 5vh 0;
+    
 
     &__title {
         @include title-section;
@@ -109,6 +110,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+     
 
        
 
@@ -129,7 +131,8 @@
     &__link {
         position: relative;
         font-family: $sans-serif;
-    
+        
+
         width:  180px;
         height: 250px;
         margin: 2rem 0;
@@ -139,7 +142,7 @@
         }
 
         span {
-     
+            z-index: 2;
             position: absolute;
             text-transform: uppercase;
             bottom: -1rem;

@@ -4,9 +4,10 @@ import Layout from '../components/Layout'
 import galleryImg from '../assets/gallery.jpeg';
 
 
-const GalleryPage = () => {
+const GalleryPage = (props) => {
+    console.log(props)
     return (
-        <Layout>
+        <Layout Layout >
             <div className="gallery">
                 <div className="wrapper">
                     <h2 className="gallery__title">Zdjęcia</h2>
@@ -28,33 +29,6 @@ const GalleryPage = () => {
                     </nav>
 
                     <div className="gallery__container">
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
                         <div className="gallery__item">
                             <img className="gallery__image" src={galleryImg} alt="" />
                         </div>
