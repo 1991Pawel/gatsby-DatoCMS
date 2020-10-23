@@ -22,8 +22,6 @@ const Navigation = () => {
         setScrollY(isScrolled)
     };
 
-
-
     useEffect(() => {
         window.addEventListener("scroll", listener);
         window.addEventListener("click", handleCloseMenu);
@@ -44,7 +42,12 @@ const Navigation = () => {
                         Fotografia
                     </span>
                 </div>
-                <button className="burger" onClick={() => setIsOpenMenu(!isOpenMenu)}>{isOpenMenu ? 'X' : '-'}</button>
+
+                <button className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                    <span class="hamburger__box">
+                        <span class="hamburger__inner"></span>
+                    </span>
+                </button>
                 <ul ref={yourElement} className={isOpenMenu ? 'menu menu--active' : 'menu'}>
                     <li className="menu__list">
                         <AnchorLink className="menu__link" to="/#intro" title="Start" />
