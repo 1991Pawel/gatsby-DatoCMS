@@ -13,16 +13,16 @@ const GalleryPage = () => {
                     <nav className="gallery__nav">
                         <ul className="gallery__list">
                             <li className="gallery__category">
-                                <Link className="gallery__link" href="#">Wszystko</Link>
+                                <Link className="gallery__link" to="/">Wszystko</Link>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" href="#">Portrety</Link>
+                                <Link className="gallery__link" to="/">Portrety</Link>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" href="#">Eventy</Link>
+                                <Link className="gallery__link" to="/">Eventy</Link>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" href="#">Wesela</Link>
+                                <Link className="gallery__link" to="/">Wesela</Link>
                             </li>
                         </ul>
                     </nav>
