@@ -10,11 +10,9 @@ const Navigation = () => {
     const yourElement = createRef();
 
     const handleCloseMenu = (e) => {
-        console.log('fafa')
         if (yourElement.current && yourElement.current.contains(e.target)) {
             setIsOpenMenu(false)
         }
-
     }
 
     const listener = e => {
