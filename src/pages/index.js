@@ -33,7 +33,7 @@ const IndexPage = () => {
           <h2 className="portfolio__title">Galeria</h2>
           <div className="portfolio__option">
             <div className="portfolio__link">
-              <Link to="/">
+              <Link to="/gallery">
                 <span>Wesela
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
@@ -41,7 +41,7 @@ const IndexPage = () => {
               </Link>
             </div>
             <div className="portfolio__link">
-              <Link to="/">
+              <Link to="/gallery">
                 <span>Portrety
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
@@ -49,7 +49,7 @@ const IndexPage = () => {
               </Link>
             </div>
             <div className="portfolio__link">
-              <Link to="/">
+              <Link to="/gallery">
                 <span>Eventy
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
