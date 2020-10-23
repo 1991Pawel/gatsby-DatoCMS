@@ -1,13 +1,14 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 
 const GalleryPage = () => {
-
-
     return (
-        <h2>
-            Gallery
-        </h2>
+        <Layout>
+            <div className="wrapper">
+                <h2>lorem</h2>
+            </div>
+        </Layout >
     )
 }
 
