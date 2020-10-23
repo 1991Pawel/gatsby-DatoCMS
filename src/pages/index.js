@@ -8,6 +8,8 @@ import aboutImg from '../assets/about-img.jpg'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import facebookIcon from '../assets/instagram.svg'
 import instagramIcon from '../assets/facebook.svg'
+import nextIcon from '../assets/next.svg'
+
 
 
 
@@ -32,19 +34,25 @@ const IndexPage = () => {
           <div className="portfolio__option">
             <div className="portfolio__link">
               <Link to="/">
-                <span>Wesela</span>
+                <span>Wesela
+                  <img className="portfolio__icon" src={nextIcon} alt="next icon" />
+                </span>
                 <img src={portfolioLink} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
               <Link to="/">
-                <span>Eventy</span>
+                <span>Portrety
+                  <img className="portfolio__icon" src={nextIcon} alt="next icon" />
+                </span>
                 <img src={portfolioLink} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
               <Link to="/">
-                <span>Portrety</span>
+                <span>Eventy
+                  <img className="portfolio__icon" src={nextIcon} alt="next icon" />
+                </span>
                 <img src={portfolioLink} alt="" />
               </Link>
             </div>
