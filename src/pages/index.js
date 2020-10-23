@@ -11,8 +11,6 @@ import nextIcon from '../assets/next.svg'
 
 
 const IndexPage = ({ data }) => {
-  // console.log(data.file.childImageSharp.fluid);
-  console.log(data.about.childImageSharp.fluid);
   return (
     <Layout>
       <div id="intro" className="intro">
@@ -155,7 +153,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "intro-img.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(quality:100,maxWidth: 800) {
           ...GatsbyImageSharpFluid
         }
       }

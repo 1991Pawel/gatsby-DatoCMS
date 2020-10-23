@@ -16,7 +16,7 @@ const Navigation = () => {
     }
 
     const listener = e => {
-        const isScrolled = window.scrollY >= 80
+        const isScrolled = window.scrollY >= 280
         setScrollY(isScrolled)
     };
 

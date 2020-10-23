@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from '../components/Layout'
-import galleryImg from '../assets/gallery.jpeg';
 
 
-const GalleryPage = (props) => {
-    console.log(props)
+const GalleryPage = ({ data }) => {
+    const items = data.allDatoCmsGalleryphoto.edges
     return (
         <Layout Layout >
             <div className="gallery">
@@ -27,16 +27,41 @@ const GalleryPage = (props) => {
                             </li>
                         </ul>
                     </nav>
-
                     <div className="gallery__container">
-                        <div className="gallery__item">
-                            <img className="gallery__image" src={galleryImg} alt="" />
-                        </div>
+                        {items.map((item) => {
+                            return (
+                                <div key={item.node.id} className="gallery__item">
+                                    <Img className="gallery__image" fluid={item.node.events[0].fluid} />
+                                    <span>{item.node.title}</span>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
         </Layout >
     )
 }
+
+export const query = graphql`
+query MyQuery {
+  allDatoCmsGalleryphoto {
+    edges {
+      node {
+        id
+        title
+        category
+        events {
+          url
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
 
 export default GalleryPage;
