@@ -8,7 +8,6 @@
   
   html {
     font-size: 62.5%; 
-
   }
   
   body {
@@ -21,7 +20,7 @@
   }
 
 .strong {
-  font-weight: $medium;
+  font-weight: $bold;
 }
 
 .wrapper {
@@ -29,6 +28,14 @@
   max-width: 1200px;
   margin: 0 auto;
 
+}
+
+h2 {
+  padding-top: 3rem;
+}
+
+p {
+  line-height: 2.2rem;
 }
 
 

@@ -24,16 +24,16 @@ $regular:400;
         top:50%;
         left: 0;
 
-        color: rgba(0, 0, 0, 0.103);  
+        color: rgba(0, 0, 0, 0.062);  
         font-size: 4rem;
         font-family: sans-serif;
         font-weight: bold;
         transform: translate(-105% , -50%);
         writing-mode: vertical-lr;
         text-transform: uppercase; 
-    @media only screen and (min-width: $breakpoint-desktop) {
+      @media only screen and (min-width: $breakpoint-desktop) {
           font-size: 9rem;
-          }
+      }
   }   
   @mixin shadow-title {
     @include shadow-text;
@@ -41,6 +41,32 @@ $regular:400;
       font-size: 7rem;
     } 
   } 
+
+  @mixin title-section {
+
+    position: relative;
+    text-transform: uppercase;
+    font-weight: $regular;
+  }
+
+  @mixin gold-decoration {
+    content: '';
+    position: absolute;
+    top:-.5rem;
+    left: -.5rem;
+    background: $primary-color;
+    width: 20%;
+    height: 98%;
+    z-index: -1;
+  }
+
+  @mixin description {
+    margin-bottom: 2rem;
+    font-family: $sans-serif;
+    color: $gray-color;
+    border-left: 2px solid $primary-color ;
+    padding-left: 1rem;
+  }
 
 
   
