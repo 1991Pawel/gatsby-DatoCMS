@@ -15,11 +15,11 @@ const GalleryList = ({ item }) => {
 };
 
 const GalleryPage = (props) => {
-    const path = props.location.state.query;
+    const path = props.location.state?.query;
     const [filter, setFilter] = useState('');
 
     useEffect(() => {
-        if (path == null) {
+        if (path === false) {
             setFilter('all')
         } else {
             setFilter(path);
