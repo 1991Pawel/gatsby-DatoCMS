@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../components/Layout'
+import { useGalleryFilters } from '../helpers/useGalleryFilters'
 
 
 
@@ -17,10 +18,7 @@ const GalleryList = ({ item }) => {
 const GalleryPage = (props) => {
     const path = props.location.state?.query;
     const [filter, setFilter] = useState('');
-    const filterGallery = (filter) => {
-        return filter ? props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter) : props.data.allDatoCmsGalleryphoto.edges;
-    }
-    const filterList = filterGallery(filter);
+    const filterList = useGalleryFilters(filter);
 
     useEffect(() => {
         if (path === false) {
@@ -29,8 +27,6 @@ const GalleryPage = (props) => {
             setFilter(path);
         }
     }, [path])
-
-
 
     return (
         <Layout Layout >
