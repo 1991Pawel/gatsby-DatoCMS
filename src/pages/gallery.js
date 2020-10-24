@@ -32,7 +32,7 @@ const GalleryPage = (props) => {
                 <div className="wrapper">
                     <h2 className="gallery__title">Zdjęcia</h2>
                     <nav className="gallery__nav">
-                        <ul className="gallery__list">
+                        <ul className="gallery__menu">
                             <li className="gallery__category">
                                 <button onClick={() => setFilter('')} className="gallery__btn">Wszystko</button>
                             </li>
