@@ -1,13 +1,32 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+// exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
-// You can delete this file if you're not using it
+//     const data = await graphql(`
+//     query MyQuery {
+//         allDatoCmsGalleryphoto {
+//           edges {
+//             node {
+//               category
+//             }
+//           }
+//         }
+//       }
 
-// exports.createPages = async function ({ action, graphql }) {
-//     const { data } = await graphql`
+//     `)
 
-//     `
+//     if (data.errors) {
+//         console.log("Error retrieving data", data.errors)
+//         return
+//     }
+
+//     const merchTemplate = require.resolve("./src/pages/gallery.js")
+
+//     data.data.allDatoCmsGalleryphoto.edges.forEach(edge => {
+//         createPage({
+//             path: `/gallery/${edge.node.category}/`,
+//             component: merchTemplate,
+//             context: {
+//                 slug: edge.node.category.toLowerCase(),
+//             },
+//         })
+//     })
 // }

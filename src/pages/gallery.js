@@ -1,11 +1,47 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React, { useState, useEffect } from 'react'
+import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../components/Layout'
 
 
-const GalleryPage = ({ data }) => {
-    const items = data.allDatoCmsGalleryphoto.edges
+
+const GalleryList = ({ item }) => {
+    return (
+        <li className="gallery__item">
+            <Img className="gallery__image" fluid={item.node.events[0].fluid} />
+            <span>{item.node.title}</span>
+        </li>
+    )
+};
+
+const GalleryPage = (props) => {
+    const path = props.location.state.query;
+    const [filter, setFilter] = useState('');
+
+    useEffect(() => {
+        if (path == null) {
+            setFilter('all')
+        } else {
+            setFilter(path);
+        }
+        console.log('test')
+    }, [path])
+
+
+    const filterGallery = (filter) => {
+        switch (filter) {
+            case 'wedding':
+                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
+            case 'event':
+                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
+            case 'portrait':
+                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
+            default:
+                return props.data.allDatoCmsGalleryphoto.edges;
+        }
+    }
+    const filterList = filterGallery(filter);
+
     return (
         <Layout Layout >
             <div className="gallery">
@@ -14,34 +50,33 @@ const GalleryPage = ({ data }) => {
                     <nav className="gallery__nav">
                         <ul className="gallery__list">
                             <li className="gallery__category">
-                                <Link className="gallery__link" to="/">Wszystko</Link>
+                                <button onClick={() => setFilter('portraiteventwedding')} className="gallery__btn">Wszystko</button>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" to="/">Portrety</Link>
+                                <button onClick={() => setFilter('portrait')} params={{ query: "portrait" }} className="gallery__btn" to="/gallery/">Portrety</button>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" to="/">Eventy</Link>
+                                <button onClick={() => setFilter('event')} params={{ query: "event" }} className="gallery__btn" to="/gallery/">Eventy</button>
                             </li>
                             <li className="gallery__category">
-                                <Link className="gallery__link" to="/">Wesela</Link>
+                                <button onClick={() => setFilter('wedding')} params={{ query: "wedding" }} className="gallery__btn" to="/gallery/">Wesela</button>
                             </li>
                         </ul>
                     </nav>
                     <div className="gallery__container">
-                        {items.map((item) => {
-                            return (
-                                <div key={item.node.id} className="gallery__item">
-                                    <Img className="gallery__image" fluid={item.node.events[0].fluid} />
-                                    <span>{item.node.title}</span>
-                                </div>
-                            )
-                        })}
+                        {filterList.length ? (filterList.map((item) =>
+                            <GalleryList key={item.node.id} item={item} />)
+                        ) :
+                            <div className="gallery__info">Brak zdjęć</div>}
                     </div>
                 </div>
             </div>
         </Layout >
     )
 }
+
+
+
 
 export const query = graphql`
 query MyQuery {
@@ -53,7 +88,7 @@ query MyQuery {
         category
         events {
           url
-          fluid {
+          fluid(maxWidth:600) {
             ...GatsbyDatoCmsFluid
           }
         }

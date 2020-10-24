@@ -31,7 +31,6 @@ const Navigation = () => {
 
 
     return (
-
         <nav className={scrollY ? 'nav nav--active' : 'nav'}>
             <div className="wrapper">
                 <div className="logo">

@@ -1,6 +1,7 @@
 @import "../varibles.scss";
 
 .intro {
+    padding-top: 7rem;
     background-color: #FBFBFD;
 }
 
@@ -277,7 +278,8 @@
     
 }
 .gallery {
-    padding: 5vh 0;
+    min-height: 100vh;
+    padding: 8vh 0;
     background: #FBFBFD;
     text-transform: uppercase;
 
@@ -315,10 +317,11 @@
         align-items: center;
         list-style: none;
         width: 100%;
-       
     }
     
-    &__link {
+    &__btn {
+        border: none;
+        cursor: pointer;
         padding: 1rem;
         background-color: $primary-color;
         display: flex;
@@ -331,13 +334,16 @@
         text-transform: uppercase;
         margin-left: 1rem;
         text-decoration: none;
+        width: 12.5rem;
     }
 
     &__item {
-        margin-bottom: 2rem;
+        list-style: none;
+        text-align: center;
         border: 1px solid #ccc;
+        margin-bottom: 2rem;
         width: 40%;
-        max-width: 200px;
+        
 
         @media only screen and (min-width: $breakpoint-tablet) {
             width: 35%;
