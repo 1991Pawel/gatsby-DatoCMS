@@ -17,30 +17,20 @@ const GalleryList = ({ item }) => {
 const GalleryPage = (props) => {
     const path = props.location.state?.query;
     const [filter, setFilter] = useState('');
+    const filterGallery = (filter) => {
+        return filter ? props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter) : props.data.allDatoCmsGalleryphoto.edges;
+    }
+    const filterList = filterGallery(filter);
 
     useEffect(() => {
         if (path === false) {
-            setFilter('all')
+            setFilter('')
         } else {
             setFilter(path);
         }
-        console.log('test')
     }, [path])
 
 
-    const filterGallery = (filter) => {
-        switch (filter) {
-            case 'wedding':
-                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
-            case 'event':
-                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
-            case 'portrait':
-                return props.data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter);
-            default:
-                return props.data.allDatoCmsGalleryphoto.edges;
-        }
-    }
-    const filterList = filterGallery(filter);
 
     return (
         <Layout Layout >
@@ -50,7 +40,7 @@ const GalleryPage = (props) => {
                     <nav className="gallery__nav">
                         <ul className="gallery__list">
                             <li className="gallery__category">
-                                <button onClick={() => setFilter('portraiteventwedding')} className="gallery__btn">Wszystko</button>
+                                <button onClick={() => setFilter('')} className="gallery__btn">Wszystko</button>
                             </li>
                             <li className="gallery__category">
                                 <button onClick={() => setFilter('portrait')} params={{ query: "portrait" }} className="gallery__btn" to="/gallery/">Portrety</button>
