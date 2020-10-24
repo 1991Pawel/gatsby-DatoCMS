@@ -21,7 +21,8 @@ export const useGalleryFilters = (filter = "") => {
   }
 }`
   )
-  return filter ? data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter) : data.allDatoCmsGalleryphoto.edges;
+  return filter ? data.allDatoCmsGalleryphoto.edges.filter((item) => item.node.category === filter)
+    : data.allDatoCmsGalleryphoto.edges;
 
 }
 

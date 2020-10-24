@@ -4,8 +4,6 @@ import Img from "gatsby-image"
 import Layout from '../components/Layout'
 import { useGalleryFilters } from '../helpers/useGalleryFilters'
 
-
-
 const GalleryList = ({ item }) => {
     return (
         <li className="gallery__item">
