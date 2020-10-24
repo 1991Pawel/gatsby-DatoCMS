@@ -1,17 +1,16 @@
 import React from "react"
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import '../pages/index.scss';
-import introBg from "../assets/intro-img.jpg"
 import portfolioLink from '../assets/portfolio-link.jpg'
-import aboutImg from '../assets/about-img.jpg'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import nextIcon from '../assets/next.svg'
 
 
 
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div id="intro" className="intro">
@@ -22,7 +21,7 @@ const IndexPage = () => {
             <AnchorLink className="intro__btn" to="/#portfolio" title="Portfolio" />
           </div>
           <div className="intro__image">
-            <img src={introBg} alt="" />
+            <Img fluid={data.file.childImageSharp.fluid} alt="" />
           </div>
         </div>
       </div>
@@ -31,27 +30,31 @@ const IndexPage = () => {
           <h2 className="portfolio__title">Galeria</h2>
           <div className="portfolio__option">
             <div className="portfolio__link">
-              <Link to="/gallery">
+              <Link
+                state={{ query: 'wedding' }}
+                to="/gallery/">
                 <span>Wesela
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <img src={portfolioLink} alt="" />
+                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
-              <Link to="/gallery">
+              <Link
+                state={{ query: 'portrait' }}
+                to="/gallery/">
                 <span>Portrety
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <img src={portfolioLink} alt="" />
+                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
-              <Link to="/gallery">
+              <Link state={{ query: 'event' }} to="/gallery/">
                 <span>Eventy
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <img src={portfolioLink} alt="" />
+                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
               </Link>
             </div>
           </div>
@@ -78,7 +81,7 @@ const IndexPage = () => {
             </p>
           </div>
           <div className="about__image">
-            <img src={aboutImg} alt="" />
+            <Img fluid={data.about.childImageSharp.fluid} alt="" />
           </div>
         </div>
       </section>
@@ -149,6 +152,45 @@ const IndexPage = () => {
     </Layout >
   )
 };
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "intro-img.jpg" }) {
+      childImageSharp {
+        fluid(quality:100,maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    about: file(relativePath: { eq: "about-img.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    galleryOne: file(relativePath: { eq: "portfolio-link.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    galleryTwo:  file(relativePath: { eq: "portfolio-link.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    galleryThree: file(relativePath: { eq: "portfolio-link.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }`
 
 export default IndexPage
 

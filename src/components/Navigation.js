@@ -16,7 +16,7 @@ const Navigation = () => {
     }
 
     const listener = e => {
-        const isScrolled = window.scrollY >= 80
+        const isScrolled = window.scrollY >= 280
         setScrollY(isScrolled)
     };
 
@@ -31,7 +31,6 @@ const Navigation = () => {
 
 
     return (
-
         <nav className={scrollY ? 'nav nav--active' : 'nav'}>
             <div className="wrapper">
                 <div className="logo">
@@ -42,8 +41,8 @@ const Navigation = () => {
                 </div>
 
                 <button className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
-                    <span class="hamburger__box">
-                        <span class="hamburger__inner"></span>
+                    <span className="hamburger__box">
+                        <span className="hamburger__inner"></span>
                     </span>
                 </button>
                 <ul ref={yourElement} className={isOpenMenu ? 'menu menu--active' : 'menu'}>

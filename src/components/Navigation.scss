@@ -73,23 +73,39 @@
 
 
 .nav {
+  z-index: 99;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
     display: flex;
     justify-content: space-between;
     height: 7rem;
+    width: 100%;
+    background: $light-color;
+
 
         @media only screen and (min-width: $breakpoint-tablet) {
         height: 10rem;
     } 
 }
+
+
+
 .nav--active {
+  height: 7rem;
     position: fixed;
-    transition: 1s all;
+    background: #000;
+    transition: .6s all ease-in;
     background-color: $light-color;
-    z-index: 99;
+
     width: 100%;
     border-bottom: 1px solid $primary-color;
+
   
 }
+
+
 
 .nav .wrapper {
     width: 100%;
@@ -101,6 +117,8 @@
 
 
 }
+
+
 .menu {
     display: flex;
     justify-content: space-evenly;
