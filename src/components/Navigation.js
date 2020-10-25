@@ -32,6 +32,7 @@ const Navigation = () => {
 
     return (
         <nav className={scrollY ? 'nav nav--active' : 'nav'}>
+
             <div className="wrapper">
                 <div className="logo">
                     <AnchorLink className="logo__link" to="/#intro" title="Michał Wroceński" />
@@ -39,8 +40,7 @@ const Navigation = () => {
                         Fotografia
                     </span>
                 </div>
-
-                <button role="navigation" aria-label="main" className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                <button aria-controls="navbarSupportedContent" aria-label="Toggle navigation" className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
                     <span className="hamburger__box">
                         <span className="hamburger__inner"></span>
                     </span>
