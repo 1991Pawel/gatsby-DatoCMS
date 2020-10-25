@@ -54,6 +54,13 @@
         text-decoration: none;
         margin:3rem 0 5rem;
         border:1px solid $primary-color;
+        transition: .3s;
+
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+        }
+        
     }
 
 
@@ -156,6 +163,7 @@
 
         &:hover {
             opacity: .3;
+            transition: all .5s;
         }
 
         span {
