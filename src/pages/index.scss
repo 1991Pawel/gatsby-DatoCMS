@@ -11,7 +11,7 @@
 }
 
 .intro {
-    padding-top: 7rem;
+    padding-top: 3rem;
     background-color: #FBFBFD;
     overflow: hidden;
 
@@ -383,7 +383,6 @@
         border: none;
         cursor: pointer;
         padding: 1rem;
-        background-color: $primary-color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -398,6 +397,15 @@
 
         &:hover {
             opacity:.7;
+        }
+
+        &--active {
+            background-color: $primary-color;
+            color: $light-color;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
