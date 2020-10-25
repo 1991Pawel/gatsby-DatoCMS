@@ -84,14 +84,14 @@ query MyQuery {
                     edges {
                     node {
                     id
-        title
-        category
-        events {
-                    url
-          fluid(maxWidth:600) {
-                    ...GatsbyDatoCmsFluid
-                }
-        }
+                    title
+                    category
+                        events {
+                      url
+                 fluid(maxWidth:600) {
+                ...GatsbyDatoCmsFluid
+             }
+         }
       }
     }
   }

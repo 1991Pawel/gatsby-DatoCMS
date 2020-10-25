@@ -117,7 +117,9 @@
 
 .portfolio {
     padding: 5vh 0;
-    
+
+  
+  
 
     &__title {
         @include title-section;
@@ -188,6 +190,11 @@
     @media only screen and (min-width: $breakpoint-tablet) {
       padding: 10vh 0;
     } 
+
+    &__image {
+       height: 100%;
+
+    }
 
 }
 
