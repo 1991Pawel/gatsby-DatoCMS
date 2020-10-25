@@ -1,19 +1,24 @@
 @import "../varibles.scss";
 
-.black {
+.animation {
     top:0;
     left: 0;
     right: 0;
     bottom: 0;
     position: absolute;
     background-color: $primary-color;
-    opacity: .5;
+    opacity: .8;
 }
 
 .intro {
     padding-top: 7rem;
     background-color: #FBFBFD;
     overflow: hidden;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+        padding-top: 11rem;
+
+    }
 }
 
 .intro .wrapper {
