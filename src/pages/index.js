@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
                 <span>Wesela
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
+                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} placeholderStyle={{ visibility: "hidden" }} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
@@ -172,7 +172,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "intro-img.jpg" }) {
       childImageSharp {
-        fluid(quality:90,maxWidth: 800) {
+        fluid(quality:95,maxWidth: 800) {
           ...GatsbyImageSharpFluid
         }
       }
