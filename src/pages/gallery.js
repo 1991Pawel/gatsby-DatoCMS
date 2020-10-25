@@ -22,6 +22,14 @@ const GalleryPage = (props) => {
     const path = props.location.state?.query;
     const [filter, setFilter] = useState('');
     const filterList = useGalleryFilters(filter);
+    const [activeTab, setActiveTab] = useState(filter);
+
+    const tabs = [
+        { content: 'Wszystko', path: '', id: '' },
+        { content: 'Eventy', path: '/event', id: 'event' },
+        { content: 'Portrety', path: '/portrait', id: 'portrait' },
+        { content: 'Wesela', path: '/weeding', id: 'wedding' },
+    ]
 
     useEffect(() => {
         if (path === false) {
@@ -31,25 +39,29 @@ const GalleryPage = (props) => {
         }
     }, [path])
 
+    const changeCategory = (id) => {
+        setActiveTab(id)
+        setFilter(id);
+    }
+
     return (
-        <Layout Layout >
+        <Layout >
             <div className="gallery">
                 <div className="wrapper">
                     <h2 className="gallery__title">Zdjęcia</h2>
                     <nav className="gallery__nav">
                         <ul role="navigation" aria-label="gallery filter" className="gallery__menu">
-                            <li className="gallery__category">
-                                <button onClick={() => setFilter('')} className="gallery__btn">Wszystko</button>
-                            </li>
-                            <li className="gallery__category">
-                                <button onClick={() => setFilter('portrait')} params={{ query: "portrait" }} className="gallery__btn" to="/gallery/">Portrety</button>
-                            </li>
-                            <li className="gallery__category">
-                                <button onClick={() => setFilter('event')} params={{ query: "event" }} className="gallery__btn" to="/gallery/">Eventy</button>
-                            </li>
-                            <li className="gallery__category">
-                                <button onClick={() => setFilter('wedding')} params={{ query: "wedding" }} className="gallery__btn" to="/gallery/">Wesela</button>
-                            </li>
+                            {tabs.map((tab) => {
+                                return (
+                                    <li key={tab.id} className="gallery__category">
+                                        <button
+                                            className={tab.id === activeTab ? "gallery__btn gallery__btn--active" : "gallery__btn"}
+                                            id={tab.id}
+                                            onClick={() => changeCategory(tab.id)}>{tab.content}
+                                        </button>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </nav>
                     <div className="gallery__container">
@@ -66,17 +78,17 @@ const GalleryPage = (props) => {
 
 export const query = graphql`
 query MyQuery {
-  allDatoCmsGalleryphoto {
-    edges {
-      node {
-        id
+                    allDatoCmsGalleryphoto {
+                    edges {
+                    node {
+                    id
         title
         category
         events {
-          url
+                    url
           fluid(maxWidth:600) {
-            ...GatsbyDatoCmsFluid
-          }
+                    ...GatsbyDatoCmsFluid
+                }
         }
       }
     }
