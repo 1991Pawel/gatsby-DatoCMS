@@ -1,8 +1,19 @@
 @import "../varibles.scss";
 
+.black {
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: $primary-color;
+    opacity: .5;
+}
+
 .intro {
     padding-top: 7rem;
     background-color: #FBFBFD;
+    overflow: hidden;
 }
 
 .intro .wrapper {
@@ -386,6 +397,7 @@
         
 
         span {
+            font-family: $sans-serif;
             position: absolute;
             bottom:0;
             right: 0;

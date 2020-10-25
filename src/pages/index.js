@@ -6,23 +6,39 @@ import '../pages/index.scss';
 import portfolioLink from '../assets/portfolio-link.jpg'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import nextIcon from '../assets/next.svg'
-
-
-
+import { motion } from "framer-motion"
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div id="intro" className="intro">
         <div className="wrapper">
-          <div className="intro__content">
+          <motion.div
+            initial={{ opacity: 0, x: '4vw', }}
+            animate={{ opacity: 1, x: 0, }}
+            transition={{ delay: 1.1, duration: .5 }}
+
+            className="intro__content">
             <h1 className="intro__title">Witam cie na mojej stronie</h1>
             <p className="intro__desc">Mam na imię <strong className="strong">Michał</strong>, a fotografia to moja najwieksza pasja.</p>
             <AnchorLink className="intro__btn" to="/#portfolio" title="Portfolio" />
-          </div>
-          <div className="intro__image">
+
+          </motion.div>
+
+          <motion.div
+            className="intro__image"
+            initial={{ opacity: 0, x: -200, zIndex: -1, }}
+            animate={{ opacity: 1, x: 0, zIndex: 1, }}
+            transition={{ duration: 1 }}
+          >
             <Img fluid={data.file.childImageSharp.fluid} alt="" />
-          </div>
+            <motion.div className="black"
+              initial={{ scale: 5, zIndex: 1, }}
+              animate={{ scale: 1, zIndex: -1, }}
+              transition={{ delay: .5, ease: "easeOut", duration: 1 }}
+            />
+          </motion.div>
+
         </div>
       </div>
       <section id="portfolio" className="portfolio">
