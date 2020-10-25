@@ -40,7 +40,7 @@ const Navigation = () => {
                     </span>
                 </div>
 
-                <button className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                <button role="navigation" aria-label="main" className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
                     <span className="hamburger__box">
                         <span className="hamburger__inner"></span>
                     </span>
