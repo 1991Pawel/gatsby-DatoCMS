@@ -14,7 +14,8 @@ const Layout = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="keywords" content="photography" />
         <title>Michal wrocenski</title>
-
+        <link rel="canonical" href="https://michal-wrocenski.netlify.app/" />
+        <html lang="pl" />
       </Helmet>
       <Navigation />
       {children}
