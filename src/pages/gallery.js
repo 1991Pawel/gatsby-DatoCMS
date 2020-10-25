@@ -5,6 +5,13 @@ import Layout from '../components/Layout'
 import { useGalleryFilters } from '../helpers/useGalleryFilters'
 import { motion } from "framer-motion"
 
+const tabs = [
+    { content: 'Wszystko', path: '', id: '' },
+    { content: 'Eventy', path: '/event', id: 'event' },
+    { content: 'Portrety', path: '/portrait', id: 'portrait' },
+    { content: 'Wesela', path: '/weeding', id: 'wedding' },
+]
+
 const GalleryList = ({ item }) => {
     return (
         <motion.li
@@ -24,12 +31,7 @@ const GalleryPage = (props) => {
     const filterList = useGalleryFilters(filter);
     const [activeTab, setActiveTab] = useState(filter);
 
-    const tabs = [
-        { content: 'Wszystko', path: '', id: '' },
-        { content: 'Eventy', path: '/event', id: 'event' },
-        { content: 'Portrety', path: '/portrait', id: 'portrait' },
-        { content: 'Wesela', path: '/weeding', id: 'wedding' },
-    ]
+
 
     useEffect(() => {
         if (path === false) {
