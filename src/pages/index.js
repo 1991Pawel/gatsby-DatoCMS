@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import '../pages/index.scss';
-import portfolioLink from '../assets/portfolio-link.jpg'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import nextIcon from '../assets/next.svg'
 import { motion } from "framer-motion"
@@ -51,7 +50,7 @@ const IndexPage = ({ data }) => {
                 <span>Wesela
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} placeholderStyle={{ visibility: "hidden" }} alt="" />
+                <Img className="portfolio__image" fluid={data.galleryOne.childImageSharp.fluid} placeholderStyle={{ visibility: "hidden" }} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
@@ -61,7 +60,7 @@ const IndexPage = ({ data }) => {
                 <span>Portrety
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
+                <Img className="portfolio__image" fluid={data.galleryTwo.childImageSharp.fluid} alt="" />
               </Link>
             </div>
             <div className="portfolio__link">
@@ -69,7 +68,7 @@ const IndexPage = ({ data }) => {
                 <span>Eventy
                   <img className="portfolio__icon" src={nextIcon} alt="next icon" />
                 </span>
-                <Img fluid={data.galleryOne.childImageSharp.fluid} src={portfolioLink} alt="" />
+                <Img className="portfolio__image" fluid={data.galleryThree.childImageSharp.fluid} alt="" />
               </Link>
             </div>
           </div>
@@ -179,28 +178,28 @@ export const query = graphql`
     }
     about: file(relativePath: { eq: "about-img.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(quality:95,maxWidth: 1000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    galleryOne: file(relativePath: { eq: "portfolio-link.jpg" }) {
+    galleryOne: file(relativePath: { eq: "portfolio-link-wedding.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(quality:75,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    galleryTwo:  file(relativePath: { eq: "portfolio-link.jpg" }) {
+    galleryTwo:  file(relativePath: { eq: "portfolio-link-portrait.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(quality:75,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    galleryThree: file(relativePath: { eq: "portfolio-link.jpg" }) {
+    galleryThree: file(relativePath: { eq: "portfolio-link-event.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
+        fluid(quality:75,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
