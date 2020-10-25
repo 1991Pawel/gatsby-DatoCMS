@@ -3,13 +3,18 @@ import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../components/Layout'
 import { useGalleryFilters } from '../helpers/useGalleryFilters'
+import { motion } from "framer-motion"
 
 const GalleryList = ({ item }) => {
     return (
-        <li className="gallery__item">
+        <motion.li
+            initial={{ opacity: 0, scale: .8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: .6 }}
+            className="gallery__item">
             <Img className="gallery__image" fluid={item.node.events[0].fluid} />
             <span>{item.node.title}</span>
-        </li>
+        </motion.li>
     )
 };
 

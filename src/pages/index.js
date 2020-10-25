@@ -18,6 +18,7 @@ const IndexPage = ({ data }) => {
             animate={{ opacity: 1, x: 0, }}
             transition={{ delay: 1.1, duration: .5 }}
 
+
             className="intro__content">
             <h1 className="intro__title">Witam cie na mojej stronie</h1>
             <p className="intro__desc">Mam na imię <strong className="strong">Michał</strong>, a fotografia to moja najwieksza pasja.</p>
@@ -29,7 +30,7 @@ const IndexPage = ({ data }) => {
             className="intro__image"
             initial={{ opacity: 0, x: -200, zIndex: -1, }}
             animate={{ opacity: 1, x: 0, zIndex: 1, }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, }}
           >
             <Img fluid={data.file.childImageSharp.fluid} alt="" />
             <motion.div className="black"
