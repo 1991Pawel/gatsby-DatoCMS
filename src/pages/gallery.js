@@ -64,9 +64,6 @@ const GalleryPage = (props) => {
     )
 }
 
-
-
-
 export const query = graphql`
 query MyQuery {
   allDatoCmsGalleryphoto {

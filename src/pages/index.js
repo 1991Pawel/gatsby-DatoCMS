@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
           <motion.div
             initial={{ opacity: 0, x: '4vw', }}
             animate={{ opacity: 1, x: 0, }}
-            transition={{ delay: 1.1, duration: .5 }}
+            transition={{ delay: 1, duration: .5 }}
 
 
             className="intro__content">
@@ -25,21 +25,19 @@ const IndexPage = ({ data }) => {
             <AnchorLink className="intro__btn" to="/#portfolio" title="Portfolio" />
 
           </motion.div>
-
           <motion.div
             className="intro__image"
-            initial={{ opacity: 0, x: -200, zIndex: -1, }}
-            animate={{ opacity: 1, x: 0, zIndex: 1, }}
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, }}
           >
             <Img fluid={data.file.childImageSharp.fluid} alt="" />
-            <motion.div className="black"
+            <motion.div className="animation"
               initial={{ scale: 5, zIndex: 1, }}
               animate={{ scale: 1, zIndex: -1, }}
-              transition={{ delay: .5, ease: "easeOut", duration: 1 }}
+              transition={{ delay: .5, ease: "easeOut", duration: .8 }}
             />
           </motion.div>
-
         </div>
       </div>
       <section id="portfolio" className="portfolio">
