@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, }}
           >
-            <Img fluid={data.file.childImageSharp.fluid} alt="" />
+            <Img fluid={data.file.childImageSharp.fluid} alt="portrait of a woman with curly hair" />
             <motion.div className="animation"
               initial={{ scale: 5, zIndex: 1, }}
               animate={{ scale: 1, zIndex: -1, }}
@@ -95,7 +95,7 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
           <div className="about__image">
-            <Img fluid={data.about.childImageSharp.fluid} alt="" />
+            <Img fluid={data.about.childImageSharp.fluid} alt="woman in a black hat" />
           </div>
         </div>
       </section>
