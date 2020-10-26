@@ -171,35 +171,35 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "intro-img.jpg" }) {
       childImageSharp {
-        fluid(quality:95,maxWidth: 800) {
+        fluid(quality:80,maxWidth: 800) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     about: file(relativePath: { eq: "about-img.jpg" }) {
       childImageSharp {
-        fluid(quality:95,maxWidth: 1000) {
+        fluid(quality:70,maxWidth: 1000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     galleryOne: file(relativePath: { eq: "portfolio-link-wedding.jpg" }) {
       childImageSharp {
-        fluid(quality:75,maxWidth: 600) {
+        fluid(quality:70,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     galleryTwo:  file(relativePath: { eq: "portfolio-link-portrait.jpg" }) {
       childImageSharp {
-        fluid(quality:75,maxWidth: 600) {
+        fluid(quality:70,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     galleryThree: file(relativePath: { eq: "portfolio-link-event.jpg" }) {
       childImageSharp {
-        fluid(quality:75,maxWidth: 600) {
+        fluid(quality:70,maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
