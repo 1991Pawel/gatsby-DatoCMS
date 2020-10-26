@@ -29,7 +29,7 @@ const GalleryPage = (props) => {
     const path = props.location.state?.query;
     const [filter, setFilter] = useState('');
     const filterList = useGalleryFilters(filter);
-    const [activeTab, setActiveTab] = useState(filter);
+    const [activeTab, setActiveTab] = useState(path);
 
 
 
