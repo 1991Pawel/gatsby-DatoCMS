@@ -66,7 +66,6 @@ const GalleryPage = (props) => {
                             })}
                         </ul>
                     </nav>
-                    <p>dsds</p>
                     <ul className="gallery__container">
                         {filterList.length ? filterList.map((item) => <GalleryList key={item.node.id} item={item} />) : <p>Brak zdjęć</p>}
                     </ul>
