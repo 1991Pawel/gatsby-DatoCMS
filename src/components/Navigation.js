@@ -35,12 +35,14 @@ const Navigation = () => {
 
             <div className="wrapper">
                 <div className="logo">
-                    <AnchorLink className="logo__link" to="/#intro" title="Michał Wroceński" />
-                    <span className="logo__desc">
-                        Fotografia
-                    </span>
+                    <AnchorLink className="logo__link" to="/#intro" >
+                        Michał Wroceński
+                        <span className="logo__desc">
+                            Fotografia
+                         </span>
+                    </AnchorLink>
                 </div>
-                <button aria-controls="navbarSupportedContent" aria-label="Toggle navigation" className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                <button aria-label="menu burger" className={isOpenMenu ? 'hamburger hamburger--active' : 'hamburger'} onClick={() => setIsOpenMenu(!isOpenMenu)}>
                     <span className="hamburger__box">
                         <span className="hamburger__inner"></span>
                     </span>

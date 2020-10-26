@@ -66,12 +66,10 @@ const GalleryPage = (props) => {
                             })}
                         </ul>
                     </nav>
-                    <div className="gallery__container">
-                        {filterList.length ? (filterList.map((item) =>
-                            <GalleryList key={item.node.id} item={item} />)
-                        ) :
-                            <div className="gallery__info">Brak zdjęć</div>}
-                    </div>
+                    <p>dsds</p>
+                    <ul className="gallery__container">
+                        {filterList.length ? filterList.map((item) => <GalleryList key={item.node.id} item={item} />) : <p>Brak zdjęć</p>}
+                    </ul>
                 </div>
             </div>
         </Layout >

@@ -11,24 +11,25 @@ const Footer = () => (
                 <ul className="socials__list">
                     <li className="socials__item">
                         <a className="socials__link" href="tel:+18506484200">
-                            tel 850-648-4200</a>
+                            tel 123-456-789</a>
                     </li>
                     <li className="socials__item">
-                        <a className="socials__link" href="mailto:example@.com"> przykladowy@gmail.com</a>
+                        <a className="socials__link" href="mailto:example@.com">mwrocenski@gmail.com</a>
                     </li>
                     <li className="socials__item">
-                        www.stonainternetowa.pl
+                        www.mwrocenski.pl
                     </li>
                 </ul>
                 <h4>znajdz mnie</h4>
                 <ul className="socials__list socials__list--flex">
+
                     <li className="socials__item socials__item--mr">
-                        <a className="socials__link" href="tel:+18506484200">
+                        <a className="socials__link" target="_blank" rel="noreferrer" href="https://www.instagram.com/wrocenskifoto">
                             <img className="socials__icon" src={facebookIcon} alt="facebook icon" />
                         </a>
                     </li>
                     <li className="socials__item socials__item--mr">
-                        <a className="socials__link" href="tel:+18506484200">
+                        <a className="socials__link" target="_blank" rel="noreferrer" href="https://www.facebook.com/WrocenskiFoto">
                             <img className="socials__icon" src={instagramIcon} alt="instagram icon" />
                         </a>
                     </li>
