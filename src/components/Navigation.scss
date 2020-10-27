@@ -94,10 +94,12 @@
 .nav--active {
   height: 7rem;
     position: fixed;
-    transition: .6s all ease-in;
+    // transition: .6s all ease-in;
     background-color: $light-color;
     width: 100%;
     border-bottom: 1px solid $primary-color;
+    transition: all .3s;
+    opacity: 1;
 
   
 }
@@ -107,7 +109,6 @@
 .nav .wrapper {
     width: 100%;
     position: relative;
- 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,10 +133,12 @@
         text-decoration: none;
         margin-left: 3.5rem;
         border-bottom: 2px solid transparent;
+        transition: all .3s;
+ 
 
         &:hover {
-          transition: all .3s;
-            border-bottom:2px solid $primary-color;
+          
+          border-bottom:2px solid $primary-color;
         }
 
         @media only screen and (max-width: $breakpoint-tablet) {

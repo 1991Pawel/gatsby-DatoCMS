@@ -57,12 +57,10 @@
 
 
     &__icon,
-    &__link {
+    &__link{
+        transition: all .3s;
 
-
-        &:hover {
-            transition: all .3s;
-        }
+      
     }
 
     &__icon {
@@ -77,12 +75,9 @@
         
         text-decoration: none;
         border-bottom: 1px solid transparent;
-
-        &:hover {
-            
+        &:hover {  
             border-bottom: 1px solid $primary-color;
          
-
         }
 
     }
@@ -98,6 +93,6 @@
 }
 
 .copyright {
-    font-size: .9rem;
+    font-size: 1rem;
     text-align: center;
 }
