@@ -1,5 +1,6 @@
 @import "../varibles.scss";
 
+
 .animation {
     top:0;
     left: 0;
@@ -117,9 +118,6 @@
 
 .portfolio {
     padding: 5vh 0;
- 
-  
-  
 
     &__title {
         @include title-section;
@@ -154,20 +152,40 @@
         transform: translateY(-50%);
     }
 
+
+
+    &__image:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primary-color;
+        z-index: 999;
+        opacity: 0;
+        transition: opacity  .3s ease-in-out;
+        z-index: 1;
+    }
+
+    &__link:hover &__image:before {
+        opacity: .4;
+      
+     
+    }
+
+
     &__link {
         position: relative;
         font-family: $sans-serif;
         
-
         width:  180px;
         height: 250px;
         margin: 2rem 0;
-
-        &:hover {
-            opacity: .3;
-            transition: all .5s;
-        }
-
+        transition: all ease-in-out .3s;
+        
+    
         span {
             z-index: 2;
             position: absolute;
@@ -184,6 +202,7 @@
         &:after {
             @include gold-decoration;
         }
+         
 
     }
 
@@ -191,8 +210,12 @@
       padding: 10vh 0;
     } 
 
+    
+
+
     &__image {
        height: 100%;
+       background: #000;
 
     }
 
@@ -340,11 +363,10 @@
     }
 
     &__container {
-        // margin: 0;
-        // padding:0;
+        padding:0;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            grid-gap: 5px;
+            grid-gap: 10px;
 
                    
           @media only screen and (min-width: $breakpoint-tablet) {
@@ -353,9 +375,13 @@
           }
           
           @media only screen and (min-width: $breakpoint-desktop) {
-              grid-template-columns: repeat(4, 1fr);
+              grid-template-columns: repeat(3, 1fr);
             
           }
+          @media only screen and (min-width: $brakepoint-desktop-xl) {
+            grid-template-columns: repeat(4, 1fr);
+          
+        }
     }
 
        &__menu {
@@ -389,21 +415,22 @@
     }
 
     &__btn {
+        background-color: $dark-color;
         border: none;
         cursor: pointer;
         padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $dark-color;
+        color: $light-color;
         font-family: $sans-serif;
-        font-weight: $medium;
+        font-weight: $regular;
         font-size: 1.4rem;
         text-transform: uppercase;
         margin-left: 1rem;
         text-decoration: none;
         width: 12.5rem;
-        transition: .3s all;
+        transition: .3s all ease-in-out;
 
         &:hover {
             opacity:.7;
@@ -428,11 +455,8 @@
         position: relative;
         list-style: none;
         text-align: center;
-     
-  
-        
 
-        span {
+           span {
             font-family: $sans-serif;
             position: absolute;
             bottom:0;
@@ -451,6 +475,18 @@
     }
 
   
+}
+
+
+.error-page {
+    padding: 8rem 0;
+    min-height: 80vh;
+    background-color: rgba(216, 216, 216, 0.205);
+}
+
+.error-page .wrapper  {
+    padding: 8rem 0;
+    min-height: 80vh;
 }
 
 
