@@ -169,11 +169,12 @@
         z-index: 1;
     }
 
-    &__link:hover &__image:before {
-        opacity: .4;
+    &__link:hover &__image:before  {
+        opacity: .5;
       
      
     }
+   
 
 
     &__link {
@@ -184,6 +185,16 @@
         height: 250px;
         margin: 2rem 0;
         transition: all ease-in-out .3s;
+
+        @media only screen and (min-width: $breakpoint-desktop) {
+            width:  198px;
+            height: 275px;
+        } 
+
+        @media only screen and (min-width: $breakpoint-desktop-xl) {
+            width:  207px;
+            height: 287.5px;
+        } 
         
     
         span {
@@ -280,11 +291,14 @@
         }
         
         @media only screen and (min-width: $breakpoint-tablet) {
-            width: 50%;
             min-width:  350px;
                 width: 500px;
                 z-index: 9;
          }
+
+         @media only screen and (min-width: $breakpoint-desktop-xl) {
+            width: 620px;
+        } 
     }
 }
 
@@ -378,7 +392,7 @@
               grid-template-columns: repeat(3, 1fr);
             
           }
-          @media only screen and (min-width: $brakepoint-desktop-xl) {
+          @media only screen and (min-width: $breakpoint-desktop-xl) {
             grid-template-columns: repeat(4, 1fr);
           
         }
@@ -395,7 +409,7 @@
             width:75%;
          } 
 
-        @media only screen and (min-width: $breakpoint-desktop) {
+        @media only screen and (min-width: $breakpoint-desktop-xl) {
            width:55%;
         } 
      
