@@ -1,0 +1,55 @@
+@import "../varibles.scss";
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    &__inner {
+        position: relative;
+       
+        display: block;
+        max-height: 100vh;
+        max-width: 60vh;
+        border: 3px solid white;
+        box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+        background:rgb(224, 224, 224);
+        display: grid;
+        grid-template-columns: minmax(10px,800px);    
+        overflow: hidden;
+
+    }
+    &__btn {
+        position: absolute;
+        top:0;
+        right: 0;
+        height: 4rem;
+        width:4rem;
+        z-index: 100;
+        background: #fff;
+        border:none;
+        cursor: pointer;
+    }
+
+    &__image {
+        display: block;
+        height: 100%;
+        width: 100%;     
+    }
+
+    &__icon {
+        height: 1.25rem;
+        width:1.25rem;
+    }
+  }
+  
+  
+
+  

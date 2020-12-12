@@ -36,7 +36,7 @@ const Footer = () => (
                 </ul>
             </div>
         </div>
-        <p className="copyright">© 2020 P.L All Rights Reserved</p>
+        <p className="copyright"><a href="http://pavdev.pl">© 2020 P.L All Rights Reserved</a></p>
     </footer>
 )
 

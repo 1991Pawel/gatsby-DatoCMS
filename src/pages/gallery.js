@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
+
+import Modal from '../components/Modal'
 import Layout from '../components/Layout'
 import { useGalleryFilters } from '../helpers/useGalleryFilters'
 import { motion } from "framer-motion"
@@ -12,9 +14,10 @@ const tabs = [
     { content: 'Wesela', path: '/weeding', id: 'wedding' },
 ]
 
-const GalleryList = ({ item }) => {
+const GalleryList = ({ item, setSelectedImg }) => {
     return (
         <motion.li
+            onClick={() => setSelectedImg(item.node.events[0].fluid)}
             initial={{ opacity: 0, scale: .8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: .6 }}
@@ -30,6 +33,7 @@ const GalleryPage = (props) => {
     const [filter, setFilter] = useState('');
     const filterList = useGalleryFilters(filter);
     const [activeTab, setActiveTab] = useState(path);
+    const [selectedImg, setSelectedImg] = useState(null);
 
 
 
@@ -48,6 +52,7 @@ const GalleryPage = (props) => {
 
     return (
         <Layout >
+            {selectedImg && <Modal setSelectedImg={setSelectedImg} selectedImg={selectedImg} />}
             <div className="gallery">
                 <div className="wrapper">
                     <h2 className="gallery__title">Zdjęcia</h2>
@@ -67,7 +72,7 @@ const GalleryPage = (props) => {
                         </ul>
                     </nav>
                     <ul className="gallery__container">
-                        {filterList.length ? filterList.map((item) => <GalleryList key={item.node.id} item={item} />) : <p>Brak zdjęć</p>}
+                        {filterList.length ? filterList.map((item) => <GalleryList setSelectedImg={setSelectedImg} key={item.node.id} item={item} />) : <p>Brak zdjęć</p>}
                     </ul>
                 </div>
             </div>
@@ -88,6 +93,7 @@ query MyQuery {
                  fluid(maxWidth:600) {
                 ...GatsbyDatoCmsFluid
              }
+             
          }
       }
     }

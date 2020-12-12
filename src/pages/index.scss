@@ -340,11 +340,15 @@
     }
     
 }
+
+
 .gallery {
     min-height: 100vh;
     padding: 8vh 0;
     background: #F5F5F7;
     text-transform: uppercase;
+
+
 
     &__title {
         font-weight: $medium;   
@@ -402,14 +406,11 @@
     
         
     }
-
     &__image {
         display: block;
         height: 100%;
         width: 100%;
-
     }
-
     &__nav {
         margin: 3rem 0;
     }
@@ -452,6 +453,7 @@
     }
 
     &__item {
+        cursor: zoom-in;
         position: relative;
         list-style: none;
         text-align: center;
