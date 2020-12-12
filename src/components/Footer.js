@@ -9,10 +9,10 @@ const Footer = () => (
             <div className="socials">
                 <h4>Kontakt</h4>
                 <ul className="socials__list">
-                    <li className="socials__item">
+                    {/* <li className="socials__item">
                         <a className="socials__link" href="tel:+18506484200">
                             tel 123-456-789</a>
-                    </li>
+                    </li> */}
                     <li className="socials__item">
                         <a className="socials__link" href="mailto:example@.com">mwrocenski@gmail.com</a>
                     </li>
