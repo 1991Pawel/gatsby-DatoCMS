@@ -17,7 +17,7 @@ const Footer = () => (
                         <a className="socials__link" href="mailto:example@.com">mwrocenski@gmail.com</a>
                     </li>
                     <li className="socials__item">
-                        www.mwrocenski.pl
+                        www.wrocenski.pl
                     </li>
                 </ul>
                 <h4>znajdz mnie</h4>
