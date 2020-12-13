@@ -17,6 +17,7 @@ const tabs = [
 const GalleryList = ({ item, setSelectedImg }) => {
     return (
         <motion.li
+            tabIndex="0"
             onClick={() => setSelectedImg(item.node.events[0].fluid)}
             initial={{ opacity: 0, scale: .8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -41,7 +42,7 @@ const GalleryPage = (props) => {
         if (path === false) {
             setFilter('')
         } else {
-            setFilter(path);
+            setFilter(path.toLowerCase());
         }
     }, [path])
 
