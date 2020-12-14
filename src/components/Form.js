@@ -2,18 +2,23 @@ import React from 'react'
 
 
 const Form = () => (
-<form name="contact" action="POST" data-netlify="true">
+<form 
+    name="contact" 
+    method="post" 
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    >
   <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
+    <label>Imie <input type="text" name="name" /></label>   
   </p>
   <p>
-    <label>Your Email: <input type="email" name="email" /></label>
+    <label>Email: <input type="email" name="email" /></label>
   </p>
   <p>
-    <label>Message: <textarea name="message"></textarea></label>
+    <label>Wiadomość: <textarea name="message"></textarea></label>
   </p>
   <p>
-    <button type="submit">Send</button>
+    <button type="submit">Wyślij</button>
   </p>
 </form>
 )
