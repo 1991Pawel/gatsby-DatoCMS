@@ -8,10 +8,10 @@ const Form = () => (
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <input name="name" placeholder="Your Name" type="text" />
-      <input name="email" placeholder="name@name.com" type="email" />
-      <textarea name="message" />
-      <button type="submit">Send</button>
+      <input name="name" placeholder="imie" type="text" />
+      <input name="email" placeholder="email@adress.com" type="email" />
+      <textarea name="message" placeholder="text" />
+      <button type="submit">Wyślij</button>
     </form>
 
 )
