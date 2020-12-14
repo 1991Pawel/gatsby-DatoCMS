@@ -53,7 +53,6 @@ const GalleryPage = (props) => {
     }
 
     const handleUserKeyPress = useCallback((e, image) => {
-        console.log(e, image)
         const { key } = e;
         if (key === 'Enter') {
             setSelectedImg(image)

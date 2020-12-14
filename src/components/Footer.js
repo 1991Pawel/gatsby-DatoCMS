@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.scss'
+import Form from '../components/Form'
 import facebookIcon from '../assets/instagram.svg'
 import instagramIcon from '../assets/facebook.svg'
 
@@ -8,6 +9,7 @@ const Footer = () => (
         <div className="wrapper">
             <div className="socials">
                 <h4>Kontakt</h4>
+                <Form/>
                 <ul className="socials__list">
                     {/* <li className="socials__item">
                         <a className="socials__link" href="tel:+18506484200">
