@@ -1,77 +1,68 @@
-
 //Variables
 //colors
-$light-color:#fff;
-$gray-color:#E1E1E3;
+$light-color: #fff;
+$gray-color: #e1e1e3;
 $dark-color: #000;
-$primary-color:#D5B36F;
+$primary-color: #d5b36f;
 
 //fonts
-$sans-serif: 'Montserrat', sans-serif;
-$serif: 'Libre Baskerville', serif;
+$sans-serif: "Montserrat", sans-serif;
+$serif: "Libre Baskerville", serif;
 $bold: 600;
-$medium:500;
-$regular:400;
-
+$medium: 500;
+$regular: 400;
 
 /// mixins
 
 @mixin shadow-text {
-        content: 'Wrocenski';
-        position: absolute;
-        top:50%;
-        left: 0;
+  content: "Wrocenski";
+  position: absolute;
+  top: 50%;
+  left: 0;
 
-        color: rgba(0, 0, 0, 0.062);  
-        font-size: 4rem;
-        font-family: sans-serif;
-        font-weight: bold;
-        transform: translate(-105% , -50%);
-        writing-mode: vertical-lr;
-        text-transform: uppercase; 
-      @media only screen and (min-width: $breakpoint-desktop) {
-          font-size: 9rem;
-      }
-  }   
-  @mixin shadow-title {
-    @include shadow-text;
-    @media only screen and (min-width: $breakpoint-desktop) {
-      font-size: 7rem;
-    } 
-  } 
-
-  @mixin title-section {
-
-    position: relative;
-    text-transform: uppercase;
-    font-weight: $regular;
+  color: rgba(0, 0, 0, 0.062);
+  font-size: 4rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  transform: translate(-105%, -50%);
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  @media only screen and (min-width: $breakpoint-desktop) {
+    font-size: 9rem;
   }
-
-  @mixin gold-decoration {
-    content: '';
-    position: absolute;
-    top:-.5rem;
-    left: -.5rem;
-    background: $primary-color;
-    width: 20%;
-    height: 98%;
-    z-index: -1;
+}
+@mixin shadow-title {
+  @include shadow-text;
+  @media only screen and (min-width: $breakpoint-desktop) {
+    font-size: 7rem;
   }
+}
 
-  @mixin description {
-    margin-bottom: 2rem;
-    font-family: $sans-serif;
-    color: $gray-color;
-    border-left: 2px solid $primary-color ;
-    padding-left: 1rem;
-  }
+@mixin title-section {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: $regular;
+  font-family: $serif;
+}
 
+@mixin gold-decoration {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  background: $primary-color;
+  width: 20%;
+  height: 98%;
+  z-index: -1;
+}
 
-  
-      
-  
-
-  
+@mixin description {
+  margin-bottom: 2rem;
+  font-family: $sans-serif;
+  color: $gray-color;
+  border-left: 2px solid $primary-color;
+  padding-left: 1rem;
+}
 
 // mixins brakepoints
 $breakpoint-tablet: 800px;

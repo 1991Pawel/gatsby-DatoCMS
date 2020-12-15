@@ -1,0 +1,61 @@
+@import "../varibles.scss";
+
+.form {
+  max-width: 460px;
+  margin: 2rem auto;
+  color: #ccc;
+
+  &__success,
+  &__error {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(66, 143, 51);
+  }
+
+  &__error {
+    color: rgb(160, 43, 8);
+  }
+
+  &__inner {
+    background-color: #ffffff;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__btn {
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1.5rem;
+    color: $dark-color;
+    text-decoration: none;
+    margin-top: 3rem;
+    border: 1px solid $primary-color;
+    transition: 0.3s;
+    cursor: pointer;
+    background: $primary-color;
+    color: $light-color;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    color: $dark-color;
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+  }
+
+  &__input,
+  &__textarea {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__input {
+    height: 3.5rem;
+  }
+}

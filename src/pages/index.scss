@@ -1,494 +1,429 @@
 @import "../varibles.scss";
 
-
 .animation {
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    background-color: $primary-color;
-    opacity: .8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: $primary-color;
+  opacity: 0.8;
 }
 
 .intro {
-    padding-top: 3rem;
-    background-color: #FBFBFD;
-    overflow: hidden;
+  padding-top: 3rem;
+  background-color: #fbfbfd;
+  overflow: hidden;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
-        padding-top: 11rem;
-
-    }
+  @media only screen and (min-width: $breakpoint-tablet) {
+    padding-top: 11rem;
+  }
 }
 
 .intro .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-
-    @media only screen and (min-width: $breakpoint-tablet) {
-        flex-direction: row;
-        justify-content: space-between;
-
-    }
-    
+  @media only screen and (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .intro {
-    &__content {
-        margin-top: 5rem;
+  &__content {
+    margin-top: 5rem;
 
-        @media only screen and (min-width: $breakpoint-tablet) {
-            padding-right: 4rem; 
-         }
-     
+    @media only screen and (min-width: $breakpoint-tablet) {
+      padding-right: 4rem;
+    }
+  }
+
+  &__btn {
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1.5rem;
+    color: $dark-color;
+    text-decoration: none;
+    margin: 3rem 0 5rem;
+    border: 1px solid $primary-color;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: $regular;
+  }
+  &__desc {
+    font-size: 1.8rem;
+    font-family: $sans-serif;
+    color: rgb(31, 30, 30);
+  }
+
+  &__image {
+    position: relative;
+    width: 230px;
+    z-index: 9;
+    @media only screen and (min-width: 600px) {
+      width: 40%;
     }
 
-    &__btn {
-        font-family: $sans-serif;
-        text-transform: uppercase;
-        display: inline-block;
-        padding: 1.5rem;
-        color: $dark-color;
-        text-decoration: none;
-        margin:3rem 0 5rem;
-        border:1px solid $primary-color;
-        transition: .3s;
-
-        &:hover {
-            background-color: $primary-color;
-            color: #fff;
-        }
-        
+    &:before {
+      content: "";
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      background: $primary-color;
+      width: 20%;
+      height: 98%;
+      z-index: -1;
     }
 
-
-    &__title {
-     
-        font-size: 3rem;
-        font-weight: $regular;
-
+    &:after {
+      @include shadow-text;
     }
-    &__desc {
-        font-size: 1.8rem;
-        font-family:$sans-serif;
-        color: rgb(31, 30, 30);
-    }
+  }
 
-  
+  @media only screen and (min-width: $breakpoint-desktop) {
     &__image {
-        position: relative;
-        width:  230px;  
-        z-index: 9;
-        @media only screen and (min-width: 600px) {
-            width:  40%; 
-        }
-            
-        &:before {
-            content: '';
-            position: absolute;
-            top:-.5rem;
-            left: -.5rem;
-            background: $primary-color;
-            width: 20%;
-            height: 98%;
-            z-index: -1;
-        }
-
-        &:after {
-            @include shadow-text;
-        }
-
-        
+      min-width: 350px;
+      width: 500px;
+      z-index: 9;
     }
-
-
-    @media only screen and (min-width: $breakpoint-desktop) {
-        &__image {
-            min-width:  350px;
-                width: 500px;
-                z-index: 9;
-            
-        }
-    }    
-
+  }
 }
 
 .portfolio {
-    padding: 5vh 0;
+  padding: 5vh 0;
 
-    &__title {
-        @include title-section;
-        
-    }
-    &__title:before {
-        @include shadow-title;
-        content: 'Portfolio';
-        writing-mode: horizontal-tb;
-        transform: translate(0 , -100%);
-    }
+  &__title {
+    @include title-section;
+  }
+  &__title:before {
+    @include shadow-title;
+    content: "Portfolio";
+    writing-mode: horizontal-tb;
+    transform: translate(0, -100%);
+  }
 
-    &__option {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-     
-
-       
-
-        @media only screen and (min-width: $breakpoint-tablet) {
-            flex-direction: row;
-            justify-content: space-between;
-        } 
-    }
-
-    &__icon {
-        top:50%;
-        right: 1rem;
-        position: absolute;
-        height: 15px;
-        transform: translateY(-50%);
-    }
-
-
-
-    &__image:before {
-        display: block;
-        content: '';
-        position: absolute;
-        top:0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: $primary-color;
-        z-index: 999;
-        opacity: 0;
-        transition: opacity  .3s ease-in-out;
-        z-index: 1;
-    }
-
-    &__link:hover &__image:before {
-        opacity: .4;
-      
-     
-    }
-
-
-    &__link {
-        position: relative;
-        font-family: $sans-serif;
-        
-        width:  180px;
-        height: 250px;
-        margin: 2rem 0;
-        transition: all ease-in-out .3s;
-        
-    
-        span {
-            z-index: 2;
-            position: absolute;
-            text-transform: uppercase;
-            bottom: -1rem;
-            right: -1rem;
-            display: block;
-            position: absolute;
-            background: $dark-color;
-            color: #fff;
-            padding: 1rem 3rem;
-        }
-
-        &:after {
-            @include gold-decoration;
-        }
-         
-
-    }
-
-    @media only screen and (min-width: $breakpoint-tablet) {
-      padding: 10vh 0;
-    } 
-
-    
-
-
-    &__image {
-       height: 100%;
-       background: #000;
-
-    }
-
-}
-
-.about .wrapper {
+  &__option {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-
     @media only screen and (min-width: $breakpoint-tablet) {
-        flex-direction: row; 
-     }
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__icon {
+    top: 50%;
+    right: 1rem;
+    position: absolute;
+    height: 15px;
+    transform: translateY(-50%);
+  }
+
+  &__image:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $primary-color;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  &__link:hover &__image:before {
+    opacity: 0.4;
+  }
+
+  &__link {
+    position: relative;
+    font-family: $sans-serif;
+
+    width: 180px;
+    height: 250px;
+    margin: 2rem 0;
+    transition: all ease-in-out 0.3s;
+
+    span {
+      z-index: 2;
+      position: absolute;
+      text-transform: uppercase;
+      bottom: -1rem;
+      right: -1rem;
+      display: block;
+      position: absolute;
+      background: $dark-color;
+      color: #fff;
+      padding: 1rem 3rem;
+    }
+
+    &:after {
+      @include gold-decoration;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    padding: 10vh 0;
+  }
+
+  &__image {
+    height: 100%;
+    background: #000;
+  }
+}
+
+.about .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
 }
 
 .about {
-    padding: 5vh 0;
-    background: #2c2c2c;
+  padding: 5vh 0;
+  background: #2c2c2c;
 
-    &__content {
-      
-        @media only screen and (min-width: $breakpoint-tablet) {
-            width:70%;
-            padding-right: 4rem; 
-         }
-         
+  &__content {
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 70%;
+      padding-right: 4rem;
+    }
+  }
+
+  &__title,
+  &__desc {
+    color: $light-color;
+  }
+
+  &__desc {
+    @include description;
+  }
+
+  &__desc:last-child {
+    margin-bottom: 6rem;
+  }
+
+  &__title {
+    @include title-section;
+    margin-bottom: 3rem;
+  }
+
+  &__title:before {
+    @include shadow-title;
+    content: "O mnie";
+    writing-mode: horizontal-tb;
+    transform: translate(0, -100%);
+    color: rgba(216, 216, 216, 0.205);
+  }
+
+  &__image {
+    position: relative;
+    width: 230px;
+    z-index: 9;
+
+    &:before {
+      @include gold-decoration;
     }
 
-    &__title,&__desc {
-        color: $light-color;
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 50%;
+      min-width: 350px;
+      width: 500px;
+      z-index: 9;
     }
-
-    &__desc {
-     @include description
-    }
-
-    &__desc:last-child {
-        margin-bottom: 6rem;
-    }
-    
-    &__title {
-        @include title-section;
-        margin-bottom: 3rem;
-    }
-     
-    &__title:before {
-        @include shadow-title;
-        content: 'O mnie';
-        writing-mode: horizontal-tb;
-        transform: translate(0 , -100%);
-        color: rgba(216, 216, 216, 0.205);  
-    }
-
-    &__image {
-        position: relative;
-        width:  230px;  
-        z-index: 9;
-
-        &:before {
-            @include gold-decoration;  
-        }
-        
-        @media only screen and (min-width: $breakpoint-tablet) {
-            width: 50%;
-            min-width:  350px;
-                width: 500px;
-                z-index: 9;
-         }
-    }
+  }
 }
-
 
 .services {
-    padding: 5vh 0; 
-    background: #F5F5F7;
+  padding: 5vh 0;
+  background: #f5f5f7;
+  display: flex;
+
+  &__boxs {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-
-    &__boxs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        
-  
+  &__box {
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 48%;
     }
+  }
 
-    &__box {
-        @media only screen and (min-width: $breakpoint-tablet) {
-            width: 48%;
-          
-          } 
-    }
-
-
-   &__title {
+  &__title {
     position: relative;
     @include title-section;
-  
-   } 
+  }
 
-   &__title:before {
+  &__title:before {
     @include shadow-title;
-    content: 'Usługi';
+    content: "Usługi";
     writing-mode: horizontal-tb;
-    transform: translate(0 , -100%);
-    }
+    transform: translate(0, -100%);
+  }
 
-    &__desc {
-        @include description;
-       color: #333232;
-       padding: 1.5rem 1rem;  
-   
-    }
+  &__desc {
+    @include description;
+    color: #333232;
+    padding: 1.5rem 1rem;
+  }
 
-    &__heading {
-        color:$dark-color;
-        font-family: $sans-serif;
-        font-weight: $medium;
-       
-        
-    }
-    
+  &__heading {
+    color: $dark-color;
+    font-family: $sans-serif;
+    font-weight: $medium;
+  }
 }
-
 
 .gallery {
-    min-height: 100vh;
-    padding: 8vh 0;
-    background: #F5F5F7;
+  min-height: 100vh;
+  padding: 8vh 0;
+  background: #f5f5f7;
+  text-transform: uppercase;
+
+  &__title {
+    font-weight: $medium;
+  }
+
+  &__category {
+    margin-bottom: 3rem;
+    width: 40%;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 25%;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 0;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media only screen and (min-width: $brakepoint-desktop-xl) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    @media only screen and (min-width: $breakpoint-tablet) {
+      width: 75%;
+    }
+
+    @media only screen and (min-width: $breakpoint-desktop) {
+      width: 55%;
+    }
+  }
+  &__image {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  &__nav {
+    margin: 3rem 0;
+  }
+
+  &__btn {
+    background-color: $dark-color;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light-color;
+    font-family: $sans-serif;
+    font-weight: $regular;
+    font-size: 1.4rem;
     text-transform: uppercase;
+    margin-left: 1rem;
+    text-decoration: none;
+    width: 12.5rem;
+    transition: 0.3s all ease-in-out;
 
-
-
-    &__title {
-        font-weight: $medium;   
-        
-        
+    &:hover {
+      opacity: 0.7;
     }
 
-    &__category {
-        margin-bottom: 3rem;
-        width: 40%;
+    &--active {
+      background-color: $primary-color;
+      color: $light-color;
 
-        @media only screen and (min-width: $breakpoint-tablet) {
-            width: 25%;
-        } 
-        
+      &:hover {
+        opacity: 1;
+      }
     }
+  }
 
-    &__container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 10px;
-        padding:0;
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
 
-                   
-          @media only screen and (min-width: $breakpoint-tablet) {
-              grid-template-columns: repeat(3, 1fr);
-            
-          }
-          
-          @media only screen and (min-width: $breakpoint-desktop) {
-              grid-template-columns: repeat(4, 1fr);
-            
-          }
-          @media only screen and (min-width: $brakepoint-desktop-xl) {
-            grid-template-columns: repeat(5, 1fr);
-          
-        }
+  &__item {
+    cursor: zoom-in;
+    position: relative;
+    list-style: none;
+    text-align: center;
+
+    span {
+      font-family: $sans-serif;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: #000;
+      padding: 0.7rem;
+      color: $primary-color;
+      font-size: 1rem;
+
+      @media only screen and (min-width: $breakpoint-tablet) {
+        font-size: 1.5rem;
+      }
     }
-
-       &__menu {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        list-style: none;
-        @media only screen and (min-width: $breakpoint-tablet) {
-            width:75%;
-         } 
-
-        @media only screen and (min-width: $breakpoint-desktop) {
-           width:55%;
-        } 
-     
-    
-        
-    }
-    &__image {
-        display: block;
-        height: 100%;
-        width: 100%;
-    }
-    &__nav {
-        margin: 3rem 0;
-    }
-
-    &__btn {
-        background-color: $dark-color;
-        border: none;
-        cursor: pointer;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $light-color;
-        font-family: $sans-serif;
-        font-weight: $regular;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        margin-left: 1rem;
-        text-decoration: none;
-        width: 12.5rem;
-        transition: .3s all ease-in-out;
-
-        &:hover {
-            opacity:.7;
-        }
-
-        &--active {
-            background-color: $primary-color;
-            color: $light-color;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-
-    &__list {
-        margin: 0;
-        padding: 0;
-    }
-
-    &__item {
-        cursor: zoom-in;
-        position: relative;
-        list-style: none;
-        text-align: center;
-
-           span {
-            font-family: $sans-serif;
-            position: absolute;
-            bottom:0;
-            right: 0;
-            left: 0;
-            background: #000;
-            padding: .7rem;
-            color:$primary-color;
-            font-size: 1rem;
-
-            @media only screen and (min-width: $breakpoint-tablet) {
-                font-size: 1.5rem;
-            } 
-        }   
-
-    }
-
-  
+  }
 }
-
 
 .error-page {
-    padding: 8rem 0;
-    min-height: 80vh;
-    background-color: rgba(216, 216, 216, 0.205);
+  padding: 8rem 0;
+  min-height: 80vh;
+  background-color: rgba(216, 216, 216, 0.205);
 }
 
-.error-page .wrapper  {
-    padding: 8rem 0;
-    min-height: 80vh;
+.error-page .wrapper {
+  padding: 8rem 0;
+  min-height: 80vh;
 }
-
-
