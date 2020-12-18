@@ -1,6 +1,6 @@
 const path = require(`path`)
 
-module.exports = {
+module.exports = { 
   siteMetadata: {
     title: `Michal Wrocenski`,
     description: `Fotografia Michal wrocenski`,

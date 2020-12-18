@@ -5,8 +5,7 @@ import Layout from "../components/Layout"
 import '../pages/index.scss';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import nextIcon from '../assets/next.svg'
-import { motion } from "framer-motion"
-
+import { motion } from 'framer-motion' 
 const IndexPage = ({ data }) => {
   return (
     <Layout>

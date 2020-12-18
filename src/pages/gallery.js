@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 import Modal from '../components/Modal'
 import Layout from '../components/Layout'
-import { useGalleryFilters } from '../helpers/useGalleryFilters'
+import { useGalleryFilters } from '../hooks/useGalleryFilters'
 import { motion } from "framer-motion"
 
 const tabs = [
@@ -36,8 +36,6 @@ const GalleryPage = (props) => {
     const filterList = useGalleryFilters(filter);
     const [activeTab, setActiveTab] = useState(path);
     const [selectedImg, setSelectedImg] = useState(null);
-
-
 
     useEffect(() => {
         if (path === false) {
