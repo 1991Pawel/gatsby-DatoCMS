@@ -47,12 +47,14 @@
     color: $dark-color;
     font-size: 1.4rem;
     margin: 0.8rem 0;
+    text-transform: capitalize;
   }
 
   &__input,
   &__textarea {
     display: inline-block;
     width: 100%;
+    border: 1px solid $primary-color;
   }
 
   &__input {
