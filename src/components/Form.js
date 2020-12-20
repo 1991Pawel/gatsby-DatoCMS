@@ -79,8 +79,8 @@ const Form = () => {
                     rows="4" cols="50"
                     name="message"
                     value={values.message}
-                    required>
-                </textarea>
+                    required/>
+        
                 <button className="form__btn" type="submit">Wyślij</button>
             </div>
         </form>
