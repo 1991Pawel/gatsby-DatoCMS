@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         <title>Michał Wroceński</title>
         <link rel="canonical" href="https://wrocenski.pl/" />
         <meta name="Description" content="Strona poświecona fotografii. Michał Wroceński , fotograf z Białegostoku"></meta>
-        <html lang="pl" />
+        <html lang="pl-PL" />
       </Helmet>
       <Navigation />
       {children}
