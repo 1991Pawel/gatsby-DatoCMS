@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="keywords" content="photography" />
         <title>Michał Wroceński</title>
-        <link rel="canonical" href="https://michal-wrocenski.netlify.app/" />
+        <link rel="canonical" href="https://wrocenski.pl/" />
         <meta name="Description" content="Strona poświecona fotografii. Michał Wroceński , fotograf z Białegostoku"></meta>
         <html lang="pl" />
       </Helmet>
