@@ -75,7 +75,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="about" className="about">
         <div className="wrapper">
-          <div className="about__content">
+          <article className="about__content">
             <h2 className="about__title">Michał Wroceński</h2>
             <p className="about__desc">
               Mam na imię <strong className="strong">Michał</strong>, a fotografia to moja największa pasja.
@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
               Będzie mi niezmierni miło, jeśli wybierzesz właśnie mnie,
               abym uwiecznił chwilę z Twojego życia na fotografii.
             </p>
-          </div>
+          </article>
           <div className="about__image">
             <Img fluid={data.about.childImageSharp.fluid} alt="woman in a black hat" />
           </div>
@@ -115,7 +115,7 @@ const IndexPage = ({ data }) => {
                 Postaram się spełnić je wszystkie.
             </p>
             </div>
-            <div className="services__box">
+            <article className="services__box">
               <h3 className="services__heading">
                 Sesje rodzinne
             </h3>
@@ -125,8 +125,8 @@ const IndexPage = ({ data }) => {
                 jest cierpliwością dzieciaków. Proponuję, abyście zarezerwowali sobie na taką sesję
                 od godziny do dwóch.
             </p>
-            </div>
-            <div className="services__box">
+            </article>
+            <article className="services__box">
               <h3 className="services__heading">
                 Sesje Narzeczeńskie
             </h3>
@@ -135,8 +135,8 @@ const IndexPage = ({ data }) => {
                 miejscach. Zaufajcie mi, znam kilka takich miejsc na Podlasiu. Jeśli macie własne pomysły
                 co do realizacji - jestem otwarty.
             </p>
-            </div>
-            <div className="services__box">
+            </article>
+            <article className="services__box">
               <h3 className="services__heading">
                 Sesje eventowe
             </h3>
@@ -145,8 +145,8 @@ const IndexPage = ({ data }) => {
                 abyście mieli niezapomnianą pamiątkę. W tym wyjątkowym dla Was dniu, będę towarzyszył Wam na każdym
                 kroku, zarówno podczas przygotować, później w świątyni, jak również niezapomnianej imprezy.
             </p>
-            </div>
-            <div className="services__box">
+            </article>
+            <article className="services__box">
               <h3 className="services__heading">
                 Sesje indywidualne
             </h3>
@@ -158,7 +158,7 @@ const IndexPage = ({ data }) => {
                 modelką lub modelem to opisz mi swoje oczekiwania co do sesji najdokładniej jak tylko potrafisz.
                 Postaram się spełnić je wszystkie.
             </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
