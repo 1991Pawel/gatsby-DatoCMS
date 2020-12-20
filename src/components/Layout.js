@@ -5,8 +5,6 @@ import Footer from './Footer'
 import 'normalize.css'
 import './Layout.scss'
 
-
-
 const Layout = ({ children }) => {
   return (
     <div>
@@ -15,7 +13,7 @@ const Layout = ({ children }) => {
         <meta name="keywords" content="photography" />
         <title>Michał Wroceński</title>
         <link rel="canonical" href="https://wrocenski.pl/" />
-        <meta name="Description" content="Strona poświecona fotografii. Michał Wroceński , fotograf z Białegostoku"></meta>
+        <meta name="Description" content="Michał Wroceński portfolio, fotograf z Białegostoku ,portrety, sesje biznesowe, ślubne, rodzinne"></meta>
         <html lang="pl-PL" />
       </Helmet>
       <Navigation />
