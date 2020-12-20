@@ -75,7 +75,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="about" className="about">
         <div className="wrapper">
-          <article className="about__content">
+          <div className="about__content">
             <h2 className="about__title">Michał Wroceński</h2>
             <p className="about__desc">
               Mam na imię <strong className="strong">Michał</strong>, a fotografia to moja największa pasja.
@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
               Będzie mi niezmierni miło, jeśli wybierzesz właśnie mnie,
               abym uwiecznił chwilę z Twojego życia na fotografii.
             </p>
-          </article>
+          </div>
           <div className="about__image">
             <Img fluid={data.about.childImageSharp.fluid} alt="woman in a black hat" />
           </div>

@@ -24,6 +24,7 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
 
 
     const handleClick = (e) => {
+        console.log('bum')
         if (e.target.classList.contains('backdrop')) {
             setSelectedImg(null);
         }

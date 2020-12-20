@@ -24,7 +24,7 @@ const GalleryList = ({ item, setSelectedImg, handleUserKeyPress }) => {
             transition={{ duration: .6 }}
             tabIndex="0"
             className="gallery__item">
-            <Img className="gallery__image" fluid={item.node.events[0].fluid} />
+            <Img  className="gallery__image" fluid={item.node.events[0].fluid} />
             <span>{item.node.title}</span>
         </motion.li>
     )
@@ -58,7 +58,7 @@ const GalleryPage = (props) => {
     }, []);
 
     return (
-        <Layout >
+        <Layout>
             {selectedImg && <Modal setSelectedImg={setSelectedImg} selectedImg={selectedImg} />}
             <div className="gallery">
                 <div className="wrapper">
@@ -79,7 +79,16 @@ const GalleryPage = (props) => {
                         </ul>
                     </nav>
                     <ul className="gallery__container">
-                        {filterList.length ? filterList.map((item) => <GalleryList handleUserKeyPress={handleUserKeyPress} setSelectedImg={setSelectedImg} key={item.node.id} item={item} />) : <p>Brak zdjęć</p>}
+                        {
+                        filterList.length ? filterList.map((item) => 
+                        <GalleryList 
+                        handleUserKeyPress={handleUserKeyPress} 
+                        setSelectedImg={setSelectedImg} key={item.node.id} 
+                        item={item} />
+                        ) 
+                        : 
+                        <p>Brak zdjęć</p>
+                        }
                     </ul>
                 </div>
             </div>
