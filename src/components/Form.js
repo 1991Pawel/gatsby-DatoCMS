@@ -1,7 +1,7 @@
-import React from 'react'
-import './Form.scss';
-import {encode} from '../helpers/encode';
-import {useForm} from '../hooks/useForm';
+import React, { useState } from 'react'
+import './Form.scss'
+import { encode } from '../helpers/encode'
+import { useMutation } from 'react-query'
 
 const initialState = {
     name: '',
@@ -10,30 +10,34 @@ const initialState = {
 }
 
 const Form = () => {
-    const {values,setValues,setError,setSucess,success,error} =  useForm(initialState)
- 
-    const handleSubmit = e => {
-        setError(false);
-        e.preventDefault();
+    const [values, setValues] = useState(initialState)
 
-        fetch("/", {
+    const sendMessage = (values) => {
+        return fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...values })
-        })
-            .then((response) => {
-                console.log('wysłana')
-                setError(() => false)
-                setSucess(true)
-            })
-            .catch(error => {
-                console.log('nie wyslana')
-                setError(() => true);
-                setSucess(false)
-            })
+        });
+    }
 
+    const { mutate, isSuccess, isLoading, isError, reset } = useMutation(sendMessage, {
+        onSuccess: () => {
+            setTimeout(() => {
+                reset();
+            }, 3000)
+        },
+        onError: () => {
+            setTimeout(() => {
+                reset();
+            }, 3000)
+        },
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        mutate({ values });
         setValues(initialState);
-    };
+    }
 
     const handleChange = (e) => {
         setValues({
@@ -52,8 +56,8 @@ const Form = () => {
             onSubmit={handleSubmit}
         >
             <div className="form__inner">
-                {error ? <p className="form__error">Błąd wysyłania</p> : null}
-                {success ? <p className="form__success">Wiadomość wysłana</p> : null}
+                {isError && <p className="form__error">Błąd wysyłania</p>}
+                {isSuccess && <p className="form__success">Wiadomość wysłana</p>}
                 <label
                     className="form__label"
                     htmlFor="name">Imię</label>
@@ -79,11 +83,14 @@ const Form = () => {
                     rows="4" cols="50"
                     name="message"
                     value={values.message}
-                    required/>
-        
-                <button className="form__btn" type="submit">Wyślij</button>
+                    required />
+                <button
+                    disabled={isLoading}
+                    className="form__btn" type="submit">
+                    {`${isLoading ? "Wysyłanie" : "Wyślij"}`}
+                </button>
             </div>
-        </form>
+        </form >
     )
 }
 export default Form;

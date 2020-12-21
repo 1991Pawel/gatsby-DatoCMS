@@ -4,10 +4,13 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import 'normalize.css'
 import './Layout.scss'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="keywords" content="photography" />
@@ -19,7 +22,7 @@ const Layout = ({ children }) => {
       <Navigation />
       {children}
       <Footer />
-    </div>
+    </QueryClientProvider>
   )
 }
 
