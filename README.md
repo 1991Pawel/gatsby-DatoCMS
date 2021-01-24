@@ -8,7 +8,11 @@
 </p>
 
 
-## 🚀 Quick start
+# I learned:
+
+- How Gatsby Works,Framer-Motion and Graphql.
+
+# 🚀 Quick start
 
 1.  **Create a Gatsby site.**
 
